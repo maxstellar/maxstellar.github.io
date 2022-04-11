@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body{
-  background-color: white;
-  border: 2px solid white;
+  background-color: dimgray;
+  border: 2px solid dimgray;
   border-radius: 18px;
   margin-top: 25px;
   margin-left: auto;
@@ -16,7 +16,7 @@ body{
 }
 
 html{
-    background-color: whitesmoke;
+    background-color: darkgray;
     background-size: 8px 8px;
 }
 
