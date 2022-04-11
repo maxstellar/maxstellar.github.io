@@ -2,9 +2,13 @@
 
 body {
 background-color: whitesmoke;
-margin-left: 10px;
+margin-left: 25px;
 }
 
 p {
+font-family: 'Poppins', sans-serif;
+}
+
+h1 {
 font-family: 'Poppins', sans-serif;
 }
