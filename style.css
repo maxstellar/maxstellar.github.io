@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body {
-background-color: whitesmoke;
+background-color: white;
 margin-left: 25px;
+}
+
+html{
+    background-color: whitesmoke;
+    background-size: 8px 8px;
 }
 
 p {
@@ -11,4 +16,8 @@ font-family: 'Poppins', sans-serif;
 
 h1 {
 font-family: 'Poppins', sans-serif;
+}
+
+#realbody {
+margin: -15px 50px 75px 100px;
 }
