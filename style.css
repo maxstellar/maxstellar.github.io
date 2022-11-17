@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;700;800&display=swap');
 
 body {
   background-color: #404040;
@@ -22,16 +22,16 @@ html {
 
 p {
 color: white;
-font-family: 'Poppins', sans-serif;
+font-family: 'Courier Prime', monospace;
 }
 
 h1 {
 color: white;
-font-family: 'Poppins', sans-serif;
+font-family: 'Courier Prime', monospace;
 }
 
 li {
 color: white;
-font-family: 'Poppins', sans-serif;
+font-family: 'Courier Prime', monospace;
 font-size: 15px;
 }
