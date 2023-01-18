@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;700;800&display=swap');
-
+<style>@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=League+Spartan:wght@400;500;700&display=swap');
+h1 {font-family:League Spartan;color:white;font-weight:700;padding:25px;padding-bottom:10px;font-size:3em;}
 body {
-  background-color: #404040;
-  border: 2px solid #404040;
+  background-color: #0f0f0f;
   border-radius: 18px;
   margin-top: 25px;
   margin-left: auto;
@@ -16,7 +15,7 @@ body {
 }
 
 html {
-    background-color: #343434;
+    background-color: #0a0a0a;
     background-size: 8px 8px;
 }
 
@@ -26,9 +25,12 @@ font-family: 'Courier Prime', monospace;
 }
 
 h1 {
-color: white;
-font-family: 'Courier Prime', monospace;
-}
+  font-family:League Spartan;
+  color:white;
+  font-weight:700;
+  padding:25px;
+  padding-bottom:10px;
+  font-size:3em;}
 
 li {
 color: white;
