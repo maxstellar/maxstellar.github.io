@@ -1,7 +1,7 @@
 <style>@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=League+Spartan:wght@400;500;700&display=swap');
-h1 {font-family:League Spartan;color:white;font-weight:700;padding:25px;padding-bottom:10px;font-size:3em;}
+
 body {
-  background-color: #0f0f0f;
+  background-color: #363636;
   border-radius: 18px;
   margin-top: 25px;
   margin-left: auto;
@@ -15,7 +15,7 @@ body {
 }
 
 html {
-    background-color: #0a0a0a;
+    background-color: #2b2b2b;
     background-size: 8px 8px;
 }
 
@@ -25,12 +25,13 @@ font-family: 'Courier Prime', monospace;
 }
 
 h1 {
-  font-family:League Spartan;
-  color:white;
-  font-weight:700;
-  padding:25px;
-  padding-bottom:10px;
-  font-size:3em;}
+  font-family: League Spartan;
+  color: white;
+  font-weight: 700;
+  padding: 25px;
+  padding-bottom: 10px;
+  font-size: 3em;
+}
 
 li {
 color: white;
