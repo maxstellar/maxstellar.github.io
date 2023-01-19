@@ -40,7 +40,7 @@ li {
 .container {
  display: grid;
  align-items: center; 
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: 1fr 4.7fr;
 }
 
 img {
