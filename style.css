@@ -15,26 +15,23 @@ body {
 }
 
 html {
-    background-color: #2b2b2b;
-    background-size: 8px 8px;
+  background-color: #2b2b2b;
 }
 
 p {
-color: white;
-font-family: 'Courier Prime', monospace;
+  color: white;
+  font-family: 'League Spartan', sans-serif;
 }
 
 h1 {
-  font-family: League Spartan;
+  font-family: 'League Spartan', sans-serif;
   color: white;
   font-weight: 700;
-  padding: 25px;
-  padding-bottom: 10px;
   font-size: 3em;
 }
 
 li {
-color: white;
-font-family: 'Courier Prime', monospace;
-font-size: 15px;
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
 }
