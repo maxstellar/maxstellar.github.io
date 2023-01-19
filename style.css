@@ -69,4 +69,5 @@ img {
 
 .scontainer {
   background-color: #EDE6D3;
+  display: inline-block;
 }
