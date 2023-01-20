@@ -68,3 +68,9 @@ li {
   background-size: auto;
   padding: 5px;
 }
+
+@media (max-width: 1000px) {
+    h1 {
+        margin-left: 15px;
+    }
+}
