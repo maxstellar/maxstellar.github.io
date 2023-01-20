@@ -70,7 +70,7 @@ li {
 }
 
 @media (max-width: 1000px) {
-    h1 {
-        margin-left: 15px;
+    .star {
+        margin-right: 15px;
     }
 }
