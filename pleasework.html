@@ -49,9 +49,10 @@
 <body>
   <input id="textbox"></input>
   <button onclick="balls()">Launch</button>
+  <br>
   <iframe src="" id="max" width="560" height="315" allowfullscreen></iframe>
   <script>
-  var thevideo = getElementById("max")
+  const thevideo = document.querySelector("iframe");
   function balls() {
     thevideo.setAttribute("src", document.getElementById("textbox").value;)
   }
