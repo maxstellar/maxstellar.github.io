@@ -5,8 +5,9 @@
   <link rel="icon" type="image/x-icon" href="https://icon.horse/icon/pausd.schoology.com">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&display=swap')
-    html {
-      background-color: #bfbfbf
+      
+    body {
+      background-color: #262727;
     }
     
     input {
@@ -14,7 +15,7 @@
       border-style: solid;
       -webkit-transition: 0.25s;
       transition: 0.25s;
-      border-color: gray;
+      border-color: #3f3f3f;
       outline: none;
       font-family: 'League Spartan', sans-serif;
       padding: 15px;
@@ -23,12 +24,13 @@
   }
 
     input:focus {
-      border-color: black;
+      border-color: #5b5c5c;
       -webkit-transition: 0.25s;
       transition: 0.25s;
   }
+    
     button {
-      background-color: #008CBA;
+      background-color: #3f3f3f;
       border-radius: 35px;
       transition-duration: 0.25s;
       border: none;
@@ -40,7 +42,7 @@
   }
 
     button:hover {
-      background-color: #1C6A85;
+      background-color: #5b5c5c;
       border-radius: 35px;
       transition-duration: 0.25s;
   }
@@ -51,20 +53,16 @@
     thevideo.setAttribute("src", document.getElementById("textbox").value);
   }
   
-  function go_get(){
-    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
-    var search_field = document.getElementById('textbox').value;
-    var target_url = base_url + search_field;
-    var thevideo = document.getElementById("max");
-    thevideo.src = target_url;
-    return false;
+  function playlist(){
+    var base_url = 'https://www.youtube.com/embed/videoseries?list=PLSDxUSVcALtGmBG5UB9V0AB4BxiVBKX5R';
+    thevideo.src = base_url;
     }
   </script>
 </head>
 <body>
   <input id="textbox"></input>
   <button onclick="balls()">Launch</button>
-  <button onclick="go_get()">Search</button>
+  <button onclick="playlist()">List</button>
   <br>
   <iframe src="placeholder" id="max" width="960" height="540" allowfullscreen></iframe>
 </body>
