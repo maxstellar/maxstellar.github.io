@@ -46,10 +46,9 @@
   }
   </style>
   <script>
-  const thevideo = document.getElementById("max");
   function balls() {
-    var url = "https://youtube.com/embed/" + document.getElementById("textbox").value;
-    thevideo.setAttribute("src", url);
+    var thevideo = document.getElementById("max");
+    thevideo.setAttribute("src", document.getElementById("textbox").value);
   }
   </script>
 </head>
