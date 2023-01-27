@@ -45,17 +45,17 @@
       transition-duration: 0.25s;
   }
   </style>
+  <script>
+  const thevideo = document.getElementById("max");
+  function balls() {
+    thevideo.setAttribute("src", document.getElementById("textbox").value);
+  }
+  </script>
 </head>
 <body>
   <input id="textbox"></input>
   <button onclick="balls()">Launch</button>
   <br>
   <iframe src="placeholder" id="max" width="560" height="315" allowfullscreen></iframe>
-  <script>
-  const thevideo = document.querySelector("iframe");
-  function balls() {
-    thevideo.setAttribute("src", document.getElementById("textbox").value;)
-  }
-  </script>
 </body>
 </html>
