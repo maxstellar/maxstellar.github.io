@@ -50,11 +50,21 @@
     var thevideo = document.getElementById("max");
     thevideo.setAttribute("src", document.getElementById("textbox").value);
   }
+  
+  function go_get(){
+    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+    var search_field = document.getElementById('textbox').value;
+    var target_url = base_url + search_field;
+    var thevideo = document.getElementById("max");
+    thevideo.src = target_url;
+    return false;
+    }
   </script>
 </head>
 <body>
   <input id="textbox"></input>
   <button onclick="balls()">Launch</button>
+  <button onclick="go_get()">Search</button>
   <br>
   <iframe src="placeholder" id="max" width="960" height="540" allowfullscreen></iframe>
 </body>
