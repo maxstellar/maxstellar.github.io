@@ -79,35 +79,13 @@ li a:hover {
 }
   </style>
   <script>
-  window.onload = function() {
-          var a = document.getElementById("bindtab");
-          var one = "";
-          var two = "";
-          var three = "";
-          const tab1 = getElementById("tab1");
-          const tab2 = getElementById("tab2");
-          const tab3 = getElementById("tab3");
-          a.onclick = function() {
-            if (one != "") {
-                if (two != "") {
-                  if (three != "") {
-                    location.reload()
-                    } else {
-                      three = document.getElementById("textbox").value;
-                      tab3.innerHTML = "<a>" + three + "</a>"
-                  } else {
-                    two = document.getElementById("textbox").value;
-                      tab2.innerHTML = "<a>" + two + "</a>"
-                  } else {
-                    one = document.getElementById("textbox").value;
-                      tab1.innerHTML = "<a>" + one + "</a>"
-                  }
-                }
-            return false;
-          }
-        }
-  </script>
-  <script>
+  var one = "";
+  var two = "";
+  var three = "";
+  const tab1 = getElementById("tab1");
+  const tab2 = getElementById("tab2");
+  const tab3 = getElementById("tab3");
+    
   function balls() {
     var thevideo = document.getElementById("max");
     thevideo.setAttribute("src", document.getElementById("textbox").value);
@@ -118,6 +96,26 @@ li a:hover {
     var base_url = 'https://www.youtube.com/embed/videoseries?list=PLSDxUSVcALtGmBG5UB9V0AB4BxiVBKX5R';
     thevideo.src = base_url;
     }
+    
+    function newtab() {
+            if (one != "") {
+                if (two != "") {
+                  if (three != "") {
+                    location.reload()
+                    } else {
+                      three = document.getElementById("textbox").value;
+                      tab3.innerHTML = "<a href='" + three + "'></a>"
+                  } else {
+                    two = document.getElementById("textbox").value;
+                      tab2.innerHTML = "<a href='" + two + "'></a>"
+                  } else {
+                    one = document.getElementById("textbox").value;
+                      tab1.innerHTML = "<a href='" + one + "'></a>"
+                  }
+                }
+            return false;
+          }
+    }
   </script>
 </head>
 <body>
@@ -125,7 +123,7 @@ li a:hover {
     <li id="tab1"></li>
     <li id="tab2"></li>
     <li id="tab3"></li>
-    <li><a id=bindtab">+</a></li>
+    <li><a onclick="newtab()">+</a></li>
   </ul>
   <input id="textbox"></input>
   <button onclick="balls()">Launch</button>
