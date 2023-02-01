@@ -56,35 +56,35 @@
       transition-duration: 0.25s;
   }
     
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #444444;
-}
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #444444;
+  }
 
-li {
-  float: left;
-  font-family: "League Spartan", sans-serif;
-  font-weight: 700;
-  background-color: #333333;
-  display: inline-block;
-  border: solid 1px #444444;
-}
+  li {
+    float: left;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    background-color: #333333;
+    display: inline-block;
+    border: solid 1px #444444;
+  }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-  display: inline-block;
-}
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    display: inline-block;
+  }
 
-li a:hover {
-  background-color: #111111;
-}
+  li a:hover {
+    background-color: #111111;
+  }
   </style>
   <script>
   var one = "";
@@ -104,20 +104,30 @@ li a:hover {
   
   function newtab() {
     if (one == "") {
-      one = document.getElementById("textbox").value;
-      document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("tab1").style = "";
-      document.getElementById("close1").style = "";
+      if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+        alert("A required field is empty.")
+      } else {
+          one = document.getElementById("textbox").value;
+          document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab1").style = "";
+          document.getElementById("close1").style = "";
+      }
     } else if (two == "") {
-      two = document.getElementById("textbox").value;
-      document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("tab2").style = "";
-      document.getElementById("close2").style = "";
+       if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+        alert("A required field is empty.")
+      } else {
+          two = document.getElementById("textbox").value;
+          document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab2").style = "";
+          document.getElementById("close2").style = "";
     } else if (three == "") {
-      three = document.getElementById("textbox").value;
-      document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("tab3").style = "";
-      document.getElementById("close3").style = "";
+      if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+        alert("A required field is empty.")
+      } else {
+          three = document.getElementById("textbox").value;
+          document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab3").style = "";
+          document.getElementById("close3").style = "";
     } else {
       alert("The maximum amount of tabs has been opened. Please close a tab to continue.");
     }
