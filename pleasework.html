@@ -82,9 +82,6 @@ li a:hover {
   var one = "";
   var two = "";
   var three = "";
-  const tab1 = getElementById("tab1");
-  const tab2 = getElementById("tab2");
-  const tab3 = getElementById("tab3");
     
   function balls() {
     var thevideo = document.getElementById("max");
@@ -96,31 +93,20 @@ li a:hover {
     var base_url = 'https://www.youtube.com/embed/videoseries?list=PLSDxUSVcALtGmBG5UB9V0AB4BxiVBKX5R';
     thevideo.src = base_url;
     }
-    
-    function newtab() {
-            if (one != "") {
-                if (two != "") {
-                  if (three != "") {
-                    location.reload()
-                    } else {
-                      three = document.getElementById("textbox").value;
-                      tab3.innerHTML = "<a href='" + three + "'></a>"
-                  } else {
-                    two = document.getElementById("textbox").value;
-                      tab2.innerHTML = "<a href='" + two + "'></a>"
-                  } else {
-                    one = document.getElementById("textbox").value;
-                      tab1.innerHTML = "<a href='" + one + "'></a>"
-                  }
-                }
-            return false;
-          }
-    }
+  
+  function newtab() {
+    one = document.getElementById("textbox").value;
+  }  
+  
+  function opentab(tab) {
+    var thevideo = document.getElementById("max");
+    thevideo.setAttribute("src", tab);
+  }
   </script>
 </head>
 <body>
   <ul>
-    <li id="tab1"></li>
+    <li id="tab1"><a onclick="opentab(one)"></a></li>
     <li id="tab2"></li>
     <li id="tab3"></li>
     <li><a onclick="newtab()">+</a></li>
