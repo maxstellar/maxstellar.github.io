@@ -86,9 +86,6 @@ li a:hover {
   var one = "";
   var two = "";
   var three = "";
-  const tab1 = document.getElementById("tab1");
-  const tab2 = document.getElementById("tab2");
-  const tab3 = document.getElementById("tab3");
     
   function balls() {
     var thevideo = document.getElementById("max");
@@ -104,18 +101,18 @@ li a:hover {
   function newtab() {
     if (one == "") {
       one = document.getElementById("textbox").value;
-      tab1.innerHTML = document.getElementById("newtabname").value;
-      tab1.style = "";
+      document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab1").style = "";
       getElementById("close1").style = "";
     } else if (two == "") {
       two = document.getElementById("textbox").value;
-      tab2.innerHTML = document.getElementById("newtabname").value;
-      tab2.style = "";
+      document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab2").style = "";
       getElementById("close2").style = "";
     } else if (three == "") {
       three = document.getElementById("textbox").value;
-      tab3.innerHTML = document.getElementById("newtabname").value;
-      tab3.style = "";
+      document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab3").style = "";
       getElementById("close3").style = "";
     } else {
       alert("The maximum amount of tabs has been reached.")
