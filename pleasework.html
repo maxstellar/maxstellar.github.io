@@ -103,17 +103,17 @@ li a:hover {
       one = document.getElementById("textbox").value;
       document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
       document.getElementById("tab1").style = "";
-      getElementById("close1").style = "";
+      document.getElementById("close1").style = "";
     } else if (two == "") {
       two = document.getElementById("textbox").value;
       document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
       document.getElementById("tab2").style = "";
-      getElementById("close2").style = "";
+      document.getElementById("close2").style = "";
     } else if (three == "") {
       three = document.getElementById("textbox").value;
       document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
       document.getElementById("tab3").style = "";
-      getElementById("close3").style = "";
+      document.getElementById("close3").style = "";
     } else {
       alert("The maximum amount of tabs has been reached.")
     }
@@ -127,19 +127,19 @@ li a:hover {
   function closetab(tab) {
     if (tab == "one") {
       one == "";
-      tab1.innerHTML = "";
-      tab1.style = "display: none";
-      getElementById("close1").style = "display: none";
+      document.getElementById("tab1").innerHTML = "";
+      document.getElementById("tab1").style = "display: none";
+      document.getElementById("close1").style = "display: none";
     } else if (tab == "two") {
       two == "";
-      tab2.innerHTML = "";
-      tab2.style = "display: none";
-      getElementById("close2").style = "display: none";
+      document.getElementById("tab2").innerHTML = "";
+      document.getElementById("tab2").style = "display: none";
+      document.getElementById("close2").style = "display: none";
     } else if (tab == "three") {
       three == "";
-      tab3.innerHTML = "";
-      tab3.style = "display: none";
-      getElementById("close3").style = "display: none";
+      document.getElementById("tab3").innerHTML = "";
+      document.getElementById("tab3").style = "display: none";
+      document.getElementById("close3").style = "display: none";
     }
   }
   </script>
