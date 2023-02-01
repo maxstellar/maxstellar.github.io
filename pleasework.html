@@ -102,15 +102,12 @@ li a:hover {
     if (one == "") {
       one = document.getElementById("textbox").value;
       document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("close1").innerHTML = "x";
     } else if (two == "") {
       two = document.getElementById("textbox").value;
       document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("close2").innerHTML = "x";
     } else if (three == "") {
       three = document.getElementById("textbox").value;
       document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
-      document.getElementById("close3").innerHTML = "x";
     } else {
       location.reload()
     }
@@ -120,26 +117,13 @@ li a:hover {
     var thevideo = document.getElementById("max");
     thevideo.setAttribute("src", tab);
   }
-    
-  function close(tab) {
-    if (tab == "one") {
-      document.getElementById("tab1").innerHTML = "";
-      document.getElementById("close1").innerHTML = "";
-    } else if (tab == "two") {
-      document.getElementById("tab2").innerHTML = "";
-      document.getElementById("close2").innerHTML = "";
-    } else if (tab == "three") {
-      document.getElementById("tab3").innerHTML = "";
-      document.getElementById("close3").innerHTML = "";
-    }
-  }
   </script>
 </head>
 <body>
   <ul>
-    <li><a id="tab1" onclick="opentab(one)"></a><a id="close1" onclick="close("one")"></a></li>
-    <li><a id="tab2" onclick="opentab(two)"></a><a id="close2" onclick="close("two")"></a></li>
-    <li><a id="tab3" onclick="opentab(three)"></a><a id="close3" onclick="close("three")"></a></li>
+    <li><a id="tab1" onclick="opentab(one)"></a></li>
+    <li><a id="tab2" onclick="opentab(two)"></a></li>
+    <li><a id="tab3" onclick="opentab(three)"></a></li>
     <li><a onclick="newtab()">+</a></li>
   </ul>
   <input id="textbox" placeholder="URL"></input>
