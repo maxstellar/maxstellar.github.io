@@ -102,12 +102,14 @@ li a:hover {
     if (one == "") {
       one = document.getElementById("textbox").value;
       document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab1").style = "";
     } else if (two == "") {
       two = document.getElementById("textbox").value;
-      document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab2").style = "";
     } else if (three == "") {
       three = document.getElementById("textbox").value;
       document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
+      document.getElementById("tab3").style = "";
     } else {
       location.reload()
     }
@@ -121,9 +123,9 @@ li a:hover {
 </head>
 <body>
   <ul>
-    <li><a id="tab1" onclick="opentab(one)"></a></li>
-    <li><a id="tab2" onclick="opentab(two)"></a></li>
-    <li><a id="tab3" onclick="opentab(three)"></a></li>
+    <li style="display=none;"><a id="tab1" onclick="opentab(one)"></a></li>
+    <li style="display=none;"><a id="tab2" onclick="opentab(two)"></a></li>
+    <li style="display=none;"><a id="tab3" onclick="opentab(three)"></a></li>
     <li><a onclick="newtab()">+</a></li>
   </ul>
   <input id="textbox" placeholder="URL"></input>
