@@ -95,7 +95,18 @@ li a:hover {
     }
   
   function newtab() {
-    one = document.getElementById("textbox").value;
+    if (one == "") {
+      one = document.getElementById("textbox").value;
+      document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
+    } else if (two == "") {
+      two = document.getElementById("textbox").value;
+      document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
+    } else if (three == "") {
+      three = document.getElementById("textbox").value;
+      document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
+    } else {
+      location.reload()
+    }
   }  
   
   function opentab(tab) {
@@ -106,12 +117,13 @@ li a:hover {
 </head>
 <body>
   <ul>
-    <li id="tab1"><a onclick="opentab(one)"></a></li>
-    <li id="tab2"></li>
-    <li id="tab3"></li>
+    <li><a id="tab1" onclick="opentab(one)"></a></li>
+    <li><a id="tab2" onclick="opentab(two)"></a></li>
+    <li><a id="tab3" onclick="opentab(three)"></a></li>
     <li><a onclick="newtab()">+</a></li>
   </ul>
   <input id="textbox"></input>
+  <input id="newtabname"></input>
   <button onclick="balls()">Launch</button>
   <button onclick="playlist()">List</button>
   <br>
