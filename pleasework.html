@@ -89,6 +89,10 @@
     -webkit-transition: 0.25s;
     transition: 0.25s;
   }  
+    
+  #newtab {
+    font-size: 1.5em;  
+  }
   </style>
   <script>
   var one = "";
@@ -174,7 +178,7 @@
     <li><a style="display: none;" id="tab1" onclick="opentab(one)"></a><a style="display: none;" id="close1" onclick="closetab('one')">x</a></li>
     <li><a style="display: none;" id="tab2" onclick="opentab(two)"></a><a style="display: none;" id="close2" onclick="closetab('two')">x</a></li>
     <li><a style="display: none;" id="tab3" onclick="opentab(three)"></a><a style="display: none;" id="close3" onclick="closetab('three')">x</a></li>
-    <li><a onclick="newtab()">+</a></li>
+    <li><a id="newtab" onclick="newtab()">+</a></li>
   </ul>
   <input id="textbox" placeholder="URL"></input>
   <input id="newtabname" placeholder="Tab Name"></input>
