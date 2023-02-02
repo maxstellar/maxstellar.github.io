@@ -111,6 +111,7 @@
           document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
           document.getElementById("tab1").style = "";
           document.getElementById("close1").style = "";
+          opentab(one);
       }
     } else if (two == "") {
        if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
@@ -120,6 +121,7 @@
           document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
           document.getElementById("tab2").style = "";
           document.getElementById("close2").style = "";
+          opentab(two);
       }
     } else if (three == "") {
       if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
@@ -129,6 +131,7 @@
           document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
           document.getElementById("tab3").style = "";
           document.getElementById("close3").style = "";
+          opentab(three);
       }
     } else {
       alert("The maximum amount of tabs has been opened. Please close a tab to continue.");
@@ -157,6 +160,8 @@
       document.getElementById("tab3").style = "display: none";
       document.getElementById("close3").style = "display: none";
     }
+    var thevideo = document.getElementById("max");
+    thevideo.setAttribute("src", "");
   }
   </script>
 </head>
