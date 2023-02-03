@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Schoology Reimagined</title>
+  <link rel="icon" type="image/x-icon" href="https://icon.horse/icon/pausd.schoology.com">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&display=swap');
+
+    body {
+      background-color: #262727;
+    }
+
+    input {
+      border-radius: 35px;
+      border-style: solid;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      border-color: #3f3f3f;
+      outline: none;
+      font-family: 'League Spartan', sans-serif;
+      padding: 15px;
+      margin: 20px;
+      width: 203px;
+      font-weight: 700;
+      background-color: #3f3f3f;
+      color: white;
+    }
+
+    #newtabname {
+      margin-left: 0px;
+    }
+
+    input:focus {
+      background-color: #5b5c5c;
+      border-color: #5b5c5c;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+    }
+
+    button {
+      background-color: #3f3f3f;
+      border-radius: 35px;
+      transition-duration: 0.25s;
+      border: none;
+      font-family: 'League Spartan', sans-serif;
+      padding: 15px;
+      margin: 20px;
+      margin-left: 0px;
+      color: white;
+      font-weight: 700;
+    }
+
+    button:hover {
+      background-color: #5b5c5c;
+      border-radius: 35px;
+      transition-duration: 0.25s;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: -8px;
+      padding: 0;
+      background-color: #444444;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      font-family: "League Spartan", sans-serif;
+      font-weight: 700;
+      background-color: #333333;
+      display: inline-block;
+      margin-right: 2px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      margin-top: 10px;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+      display: inline-block;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    li a:hover {
+      background-color: #111111;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    #tab1,
+    #tab2,
+    #tab3 {
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 0px;
+    }
+
+    #close1,
+    #close2,
+    #close3 {
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 15px;
+    }
+
+    #cluster1 {
+      margin-left: 5px;
+    }
+  </style>
+  <script>
+    var one = "";
+    var two = "";
+    var three = "";
+
+    function balls() {
+      var thevideo = document.getElementById("max");
+      thevideo.setAttribute("src", document.getElementById("textbox").value);
+    }
+
+    function playlist() {
+      var thevideo = document.getElementById("max");
+      var base_url = 'https://www.youtube.com/embed/videoseries?list=PLSDxUSVcALtGmBG5UB9V0AB4BxiVBKX5R';
+      thevideo.src = base_url;
+    }
+
+    function newtab() {
+      if (one == "") {
+        if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+          alert("A required field is empty.")
+        } else {
+          one = document.getElementById("textbox").value;
+          document.getElementById("tab1").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab1").style = "";
+          document.getElementById("close1").style = "";
+          opentab(one);
+        }
+      } else if (two == "") {
+        if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+          alert("A required field is empty.")
+        } else {
+          two = document.getElementById("textbox").value;
+          document.getElementById("tab2").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab2").style = "";
+          document.getElementById("close2").style = "";
+          opentab(two);
+        }
+      } else if (three == "") {
+        if (document.getElementById("newtabname").value == "" || document.getElementById("textbox").value == "") {
+          alert("A required field is empty.")
+        } else {
+          three = document.getElementById("textbox").value;
+          document.getElementById("tab3").innerHTML = document.getElementById("newtabname").value;
+          document.getElementById("tab3").style = "";
+          document.getElementById("close3").style = "";
+          opentab(three);
+        }
+      } else {
+        alert("The maximum amount of tabs has been opened. Please close a tab to continue.");
+      }
+    }
+
+    function opentab(tab) {
+      var thevideo = document.getElementById("max");
+      thevideo.setAttribute("src", tab);
+    }
+
+    function closetab(tab) {
+      if (tab == "one") {
+        one = "";
+        document.getElementById("tab1").innerHTML = "";
+        document.getElementById("tab1").style = "display: none";
+        document.getElementById("close1").style = "display: none";
+      } else if (tab == "two") {
+        two = "";
+        document.getElementById("tab2").innerHTML = "";
+        document.getElementById("tab2").style = "display: none";
+        document.getElementById("close2").style = "display: none";
+      } else if (tab == "three") {
+        three = "";
+        document.getElementById("tab3").innerHTML = "";
+        document.getElementById("tab3").style = "display: none";
+        document.getElementById("close3").style = "display: none";
+      }
+      var thevideo = document.getElementById("max");
+      thevideo.setAttribute("src", "");
+    }
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li id="cluster1"><a style="display: none;" id="tab1" onclick="opentab(one)"></a><a style="display: none;" id="close1"
+        onclick="closetab('one')">x</a></li>
+    <li><a style="display: none;" id="tab2" onclick="opentab(two)"></a><a style="display: none;" id="close2"
+        onclick="closetab('two')">x</a></li>
+    <li><a style="display: none;" id="tab3" onclick="opentab(three)"></a><a style="display: none;" id="close3"
+        onclick="closetab('three')">x</a></li>
+    <li id="newtab-li"><a id="newtab" onclick="newtab()">+</a></li>
+  </ul>
+  <input id="textbox" placeholder="URL"></input>
+  <input id="newtabname" placeholder="Tab Name"></input>
+  <button onclick="balls()">Launch</button>
+  <button onclick="playlist()">List</button>
+  <br>
+  <iframe id="max" width="960" height="540" allowfullscreen></iframe>
+</body>
+
+</html>
