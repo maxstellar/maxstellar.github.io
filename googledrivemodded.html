@@ -199,6 +199,13 @@
       var thevideo = document.getElementById("max");
       thevideo.setAttribute("src", "");
     }
+    
+    document.onkeypress = function (e) {
+      e = e || window.event;
+      if (e.keyCode = 192) {
+         window.location.replace("https://google.com/")
+      }
+    }
   </script>
 </head>
 
