@@ -3,6 +3,10 @@
   "templates": [],
     "whitelist": [
       {
+        "name": "JTLG Chief",
+        "url": "https://place-jltg.dbots.net/template/osuplace"
+      },
+      {
         "name": "JTLG Shinkansen",
         "url": "https://maxstellar.github.io/testtemplate.json"
       },
