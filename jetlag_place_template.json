@@ -1,0 +1,15 @@
+{
+  "contact": "Jet Lag: The Discord - https://discord.gg/jetlag",
+  "templates": [],
+    "whitelist": [
+      {
+        "name": "JTLG Chief",
+        "url": "https://maxstellar.github.io/testtemplate.json"
+      },
+      {
+        "name": "TARDIS",
+        "url": "https://uploads.marens101.com/s/2023/07/place2023_tardis_template.json"
+      }
+    ],
+  "blacklist": []
+}
