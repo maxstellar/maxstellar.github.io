@@ -1,19 +1,15 @@
 {
   "contact": "Jet Lag: The Discord - https://discord.gg/jetlag",
   "templates": [],
-    "whitelist": [
-      {
-        "name": "JTLG Chief",
-        "url": "https://place-jltg.dbots.net/template/osuplace"
-      },
-      {
-        "name": "JTLG Shinkansen",
-        "url": "https://maxstellar.github.io/testtemplate.json"
-      },
-      {
-        "name": "TARDIS",
-        "url": "https://uploads.marens101.com/s/2023/07/place2023_tardis_template.json"
-      }
-    ],
+  "whitelist": [
+    {
+      "name": "JTLG Chief",
+      "url": "https://place-jltg.dbots.net/template/osuplace"
+    },
+    {
+      "name": "Dr Who",
+      "url": "https://raw.githubusercontent.com/asl97/Template-Editor/main/DrWhom.json"
+    }
+  ],
   "blacklist": []
 }
