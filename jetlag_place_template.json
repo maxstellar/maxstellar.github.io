@@ -5,10 +5,6 @@
     {
       "name": "JTLG Chief",
       "url": "https://place-jltg.dbots.net/template/osuplace"
-    },
-    {
-      "name": "Dr Who",
-      "url": "https://raw.githubusercontent.com/asl97/Template-Editor/main/DrWhom.json"
     }
   ],
   "blacklist": []
