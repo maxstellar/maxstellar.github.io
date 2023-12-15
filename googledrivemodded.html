@@ -129,7 +129,7 @@
 
     function balls() {
       url = document.getElementById('textbox').value
-      if (url.slice(0, 8) != "https://") {
+      if (url.slice(0, 8) != "https://" && url.slice(0, 7) != "http://") {
         url = "https://" + url;
       };
       var win = window.open("about:blank", '_blank');
