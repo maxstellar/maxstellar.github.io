@@ -7,6 +7,7 @@
   <title>Max's Roulette Wheel</title>
   <style>
     :root {
+        --start-deg: 0deg;
         --end-deg: 360deg;
     }
     
@@ -20,7 +21,7 @@
     }
 
     .triangle {
-      margin: auto auto -30px auto;
+      margin: auto auto -20px auto;
       width: 0;
       height: 0;
       border: solid 20px;
@@ -38,7 +39,7 @@
     }
 
     @keyframes spin {
-        0%  {transform: rotate(0deg);}
+        0%  {transform: rotate(var(--start-deg));}
         100% {transform: rotate(var(--end-deg));}   
     }
 
@@ -66,16 +67,37 @@
     }
   </style>
   <script>
+    let spinning = 0;
+    function reset_animation() {
+      var among = document.getElementById('circle');
+      among.style.animation = 'none';
+      among.offsetHeight; /* trigger reflow */
+      among.style.animation = null;
+    }
+
+    function getRandomInt(min, max) {
+      const minCeiled = Math.ceil(min);
+      const maxFloored = Math.floor(max);
+      return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+    }
+    
     function pausing() {
-      let num = Math.floor(Math.random() * 3000) + 2000;
-      let degrees = Math.ceil(num * 0.001 / 0.25 * 360);
-      let circle = document.getElementById("circle");
-      document.documentElement.style.setProperty('--end-deg', degrees + "deg");
-      circle.style.animationPlayState = "running";
-      circle.style.animation = "spin " + (num + 100) + "ms 1 ease-in-out";
-      setTimeout(function(){
-        document.getElementById("circle").style.animationPlayState = "paused";
+      if (spinning == 0) {
+        spinning = 1;
+        reset_animation();
+        let num = getRandomInt(4000, 7000);
+        let degrees = getRandomInt(3000, 6000);
+        let circle = document.getElementById("circle");
+        document.documentElement.style.setProperty('--end-deg', degrees + "deg");
+        circle.style.animationPlayState = "running";
+        circle.style.animation = "spin " + (num + 100) + "ms infinite ease-in-out";
+        setTimeout(function(){
+          document.getElementById("circle").style.animationPlayState = "paused"; let newstart = getComputedStyle(document.documentElement).getPropertyValue('--start-deg');
+          newstart += degrees;
+          document.documentElement.style.setProperty('--start-deg', (degrees % 360) + "deg");
+          spinning = 0;
       }, num);
+      }
     }
   </script>
 </head>
