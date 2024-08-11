@@ -14,16 +14,27 @@
       height: 100vh;
       background-color: #f0f0f0;
     }
+
+    .triangle {
+      margin: auto auto -25px auto;
+      width: 0;
+      height: 0;
+      border: solid 20px;
+      border-color: black transparent transparent transparent;
+      z-index: 2;
+    }
     
     #circle {
       padding: 8em;
       border-radius: 50%;
       background: conic-gradient(from -18deg, #43a1cd 10%, #639b47 0% 20%, #9ac147 0% 30%, #e1e23b 0% 40%, #f7941e 0% 50%, #ba3e2e 0% 60%, #9a1d34 0% 70%, #662a6c 0% 80%, #272b66 0% 90%, #2d559f 0%);
+      z-index: 1;
     }
   </style>
 </head>
 
 <body>
+  <div class="triangle"></div>
   <div id="circle"></div>
 </body>
 
