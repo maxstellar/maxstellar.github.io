@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width">
   <title>Max's Roulette Wheel</title>
   <style>
+    :root {
+        --end-deg: 360deg;
+    }
+    
     body {
       display: grid;
       place-content: center;
@@ -16,7 +20,7 @@
     }
 
     .triangle {
-      margin: auto auto -25px auto;
+      margin: auto auto -30px auto;
       width: 0;
       height: 0;
       border: solid 20px;
@@ -29,13 +33,58 @@
       border-radius: 50%;
       background: conic-gradient(from -18deg, #43a1cd 10%, #639b47 0% 20%, #9ac147 0% 30%, #e1e23b 0% 40%, #f7941e 0% 50%, #ba3e2e 0% 60%, #9a1d34 0% 70%, #662a6c 0% 80%, #272b66 0% 90%, #2d559f 0%);
       z-index: 1;
+      animation: spin 0.25s infinite ease-in-out;
+      animation-play-state: paused;
+    }
+
+    @keyframes spin {
+        0%  {transform: rotate(0deg);}
+        100% {transform: rotate(var(--end-deg));}   
+    }
+
+    button {
+      margin: auto;
+      width: 80px;
+      padding: 13px;
+      border: none;
+      background-color: #e0e0e0;
+      font-size: 14pt;
+      font-family: monospace;
+      border-radius: 20px;
+    }
+
+    button:hover {
+      margin: auto;
+      width: 80px;
+      padding: 13px;
+      border: none;
+      background-color: #c0c0c0;
+      font-size: 14pt;
+      font-family: monospace;
+      border-radius: 20px;
+      transition: 
     }
   </style>
+  <script>
+    function pausing() {
+      let num = Math.floor(Math.random() * 3000) + 2000;
+      let degrees = Math.ceil(num * 0.001 / 0.25 * 360);
+      let circle = document.getElementById("circle");
+      document.documentElement.style.setProperty('--end-deg', degrees + "deg");
+      circle.style.animationPlayState = "running";
+      circle.style.animation = "spin " + (num + 100) + "ms 1 ease-in-out";
+      setTimeout(function(){
+        document.getElementById("circle").style.animationPlayState = "paused";
+      }, num);
+    }
+  </script>
 </head>
 
 <body>
   <div class="triangle"></div>
   <div id="circle"></div>
+  <br>
+  <button onclick="pausing()">Spin</button>
 </body>
 
 </html>
