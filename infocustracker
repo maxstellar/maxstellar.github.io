@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>InFocus Equipment Tracker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+      crossorigin="anonymous" 
+  />
+</head>
+
+<body>
+  <form
+    id = "form"
+    class = "mx-auto my-5 shadow p-2"
+    method = "POST"
+    >
+      <div class="mb-1 d-flex">
+        <label class="mx-3" for="eqid">Equipment ID:</label>
+        <input
+          type="text"
+          class="mx-3 form-control"
+          id="eqid"
+          name="Equipment ID"
+        />
+      </div>
+
+      <div class="mb-1 d-flex">
+            <label class="mx-3" for="sid">Student ID:</label>
+            <input
+              type="text"
+              class="mx-3 form-control"
+              id="sid"
+              name="Student ID"
+            />
+          </div>
+
+      <div class="mb-1 d-flex">
+        <label class="mx-3" for="cio">Check in/out?</label>
+        <input
+          type="text"
+          class="mx-3 form-control"
+          id="cio"
+          name="Check-in/out?"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </form>
+  <script>
+    const url = "https://script.google.com/macros/s/AKfycbxKrL1W8k27-BBNym8YT8rwE1_VbtDMvwT6icK9y6U6/dev";
+    document.getElementById('form').action = url;
+  </script>
+</body>
+
+</html>
