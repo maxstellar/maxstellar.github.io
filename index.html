@@ -1,128 +1,54 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="max-shooting-star-favicon.png">
-    <style>
-      html {
-        background-color: #2b2b2b;
-        display: table;
-        margin: auto;
-      }
-
-      body {
-        display: table-cell;
-        vertical-align: middle;
-      }
-
-      * {
-        font-family: "Roboto Mono", monospace;
-        color: white;
-        text-align: center;
-      }
-
-      h1, .moreinfo {
-        padding-top: 4px;
-      }
-
-      .social {
-        margin-right: 15px;
-      }
-
-      .socials {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      .button {
-        font-size: 1em;
-        padding: 13px;
-        color: #fff;
-        background-color: #323232;
-        border-radius: 20px;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.2s ease-out;
-      }
-      .button:hover {
-        background-color: #3a3a3a;
-      }
-      
-      .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        transition: opacity 500ms;
-        visibility: hidden;
-        opacity: 0;
-      }
-      .overlay:target {
-        visibility: visible;
-        opacity: 1;
-      }
-      
-      .popup {
-        margin: 70px auto;
-        padding: 20px;
-        background: #242424;
-        border-radius: 5px;
-        width: 40%;
-        position: relative;
-        transition: all 5s ease-in-out;
-      }
-      
-      .popup h2 {
-        margin-top: 0;
-      }
-      
-      .popup .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
-      }
-      .popup .close:hover {
-        color: #fff;
-      }
-      .popup .content {
-        max-height: 30%;
-        overflow: auto;
-      }
-    </style>
-    <title>maxstellar</title>
-  </head>
-  <body>
-    <img style="border-radius: 10px; margin-top: 25px;" src="maxstellar.png" height="150px">
-    <h1>maxstellar</h1>
-    <table class="socials">
-       <tr>
-          <td><a href="https://youtube.com/@maxstellar_/"><img class="social" src="yt_icon_mono_dark.png" height="25"></a></td>
-          <td><a href="https://twitch.tv/maxstellar/"><img class="social" src="glitch_flat_white.png" height="27"></a></td>
-          <td><a href="https://discord.gg/fishsol/"><img class="social" src="discord-mark-white.png" height="22"></a></td>
-       </tr>
-    </table>
-    <p style="margin-bottom: 6px;"><strong>he/him ~ UTC-8 (Pacific Time) ~ ENTP-T</strong></p>
-    <p style="line-height: 2em;">Hi, my name is Max, and I like to create silly things and work on silly projects.<br>I run a Roblox (Sol's RNG) YouTube channel with over 2,000 subscribers!<br>I recently got into <a href="https://twitch.tv/maxstellar">Twitch</a> streaming, so check out my channel!<br><br><a href="#popup1" class="button">More about me</a></p>
-    <div id="popup1" class="overlay">
-            <div class="popup">
-                <h2>More about me</h2>
-                <a class="close" href="#">×</a>
-                <div class="content">
-                    <p class="moreinfo">I am a high school student in the United States.</p>
-                    <p class="moreinfo">My hobbies include gaming, filmmaking, building PCs and mechanical keyboards, as well as programming.</p>
-                    <p class="moreinfo">My interests include music, films/movies, TV, anime, and Pokémon.</p>
-                    <p class="moreinfo">My favorite artists include Laufey; Suki Waterhouse; Tame Impala; and Tyler, The Creator.</p>
-                </div>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>maxstellar</title>
+    </head>
+    <body>
+        <div id="starfield"></div>
+        <div class="everythingelse">
+            <div class="whoami">
+            <img class="pfp" src="maxstellar.png">
+            <h1>hi, i'm <strong>maxstellar</strong>, and i make silly things!</h1>
             </div>
         </div>
-  </body>
+
+        <!-- used ai here, sorry :< would have made it myself but the mockup looked too good-->
+        <script>
+            const field = document.getElementById('starfield');
+            for (let i = 0; i < 130; i++) {
+              const star = document.createElement('div');
+              star.className = 'star';
+              const size = Math.random() < 0.8 ? Math.random() * 1.5 + 0.5 : Math.random() * 2.5 + 1;
+              star.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random()*100}%;
+                top:${Math.random()*100}%;
+                --dur:${2.5 + Math.random()*4}s;
+                --delay:${Math.random()*5}s;
+                --bright:${0.3 + Math.random()*0.6};
+              `;
+              // Occasionally make a yellow star
+              if (Math.random() < 0.08) star.style.background = '#F5E97A';
+              field.appendChild(star);
+            }
+            
+            // Subtle sticker wobble on page load
+            document.querySelectorAll('.sticker').forEach((s, i) => {
+              s.style.animationDelay = `${i * 0.12}s`;
+              s.style.animation = `stickerPop 0.5s ${i * 0.12 + 0.4}s cubic-bezier(0.34,1.56,0.64,1) both`;
+            });
+            const styleEl = document.createElement('style');
+            styleEl.textContent = `
+              @keyframes stickerPop {
+                from { opacity:0; transform: scale(0.6) rotate(var(--r, 0deg)); }
+                to   { opacity:1; }
+              }
+            `;
+            document.head.appendChild(styleEl);
+        </script>
+    </body>
 </html>
