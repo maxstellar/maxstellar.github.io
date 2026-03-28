@@ -68,11 +68,16 @@ a:hover {
 }
 
 .everythingelse {
-    width: 70vw;
+    width: fit-content;
+    max-width: 70vw;
     margin-left: auto;
     margin-right: auto;
 }
 
 .nexttopfp {
     margin-left: 3rem;
+}
+
+p {
+    line-height: 1.5;
 }
