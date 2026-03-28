@@ -10,9 +10,10 @@
     <body>
         <div id="starfield"></div>
         <div class="everythingelse">
-            <div class="whoami">
-            <img class="pfp" src="maxstellar.png">
-            <h1>hi, i'm <strong>maxstellar</strong>, and i make silly things!</h1>
+            <div class="landing">
+                <img class="pfp" src="maxstellar.png">
+                <h1>hi, i'm <strong>maxstellar</strong>, and i make silly things!</h1>
+                <p>you might know me from: <a href="https://hackclub.com/">hack club</a> • <a href="https://github.com/ivelchampion249/FishSol-Macro">sol's rng macros</a> • <a href="https://youtube.com/@maxstellar_">youtube</a></p>
             </div>
         </div>
 
@@ -35,20 +36,6 @@
               if (Math.random() < 0.08) star.style.background = '#F5E97A';
               field.appendChild(star);
             }
-            
-            // Subtle sticker wobble on page load
-            document.querySelectorAll('.sticker').forEach((s, i) => {
-              s.style.animationDelay = `${i * 0.12}s`;
-              s.style.animation = `stickerPop 0.5s ${i * 0.12 + 0.4}s cubic-bezier(0.34,1.56,0.64,1) both`;
-            });
-            const styleEl = document.createElement('style');
-            styleEl.textContent = `
-              @keyframes stickerPop {
-                from { opacity:0; transform: scale(0.6) rotate(var(--r, 0deg)); }
-                to   { opacity:1; }
-              }
-            `;
-            document.head.appendChild(styleEl);
         </script>
     </body>
 </html>
