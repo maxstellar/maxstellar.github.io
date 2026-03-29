@@ -14,6 +14,27 @@
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const sections = ['home', 'about', 'projects'];
+                const navButtons = {};
+                sections.forEach(id => {
+                    navButtons[id] = document.querySelector(`button[onclick="scrollToAnchor('${id}')"]`);
+                });
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            sections.forEach(id => navButtons[id].classList.remove('active'));
+                            navButtons[entry.target.id].classList.add('active');
+                        }
+                    });
+                }, {
+                    threshold: 0.6
+                });
+
+                sections.forEach(id => observer.observe(document.getElementById(id)));
+            });
         </script>
     </head>
     <body>

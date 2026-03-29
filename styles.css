@@ -119,6 +119,16 @@ p {
     border-radius: 676767676767px;
     border: 4px dashed #f5e97a;
     font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav.active {
+    background-color: #f5e97a;
+    color: #0f0f13;
+}
+
+.nav:hover {
+    border: 4px solid #f5e97a;
 }
 
 header button {
@@ -136,6 +146,19 @@ header {
     position: fixed;
     top: 0;
     padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #0f0f13cc 0%, #0f0f1300 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    z-index: -1;
 }
 
 img {
