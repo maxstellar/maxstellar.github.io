@@ -129,6 +129,7 @@ p {
 
 .nav:hover {
     border: 4px solid #f5e97a;
+    cursor: pointer;
 }
 
 header button {
