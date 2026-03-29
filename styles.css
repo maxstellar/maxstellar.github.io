@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline wavy #f5e97a 2px;
+    text-decoration: underline wavy var(--accent) 2px;
 }
 
 #starfield {
@@ -117,18 +117,18 @@ p {
     align-items: center;
     font-family: "JetBrains Mono", monospace;
     border-radius: 676767676767px;
-    border: 4px dashed #f5e97a;
+    border: 4px dashed var(--accent);
     font-size: 1.1rem;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .nav.active {
-    background-color: #f5e97a;
+    background-color: var(--accent);
     color: #0f0f13;
 }
 
 .nav:hover {
-    border: 4px solid #f5e97a;
+    border: 4px solid var(--accent);
     cursor: pointer;
 }
 
