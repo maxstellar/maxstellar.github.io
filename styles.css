@@ -39,12 +39,12 @@ a:hover {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
     overflow: hidden;
 }
 
 .star {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     border-radius: 50%;
     background: white;
@@ -96,7 +96,6 @@ a:hover {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    z-index: 2;
 }
 
 .nexttopfp {
@@ -134,7 +133,49 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     padding-top: 1rem;
+}
+
+img {
+    z-index: 999;
+}
+
+.projects {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+    gap: 3%;
+}
+
+.project {
+    width: 30%;
+    display: block;
+}
+
+.project img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pic {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #17171c;
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.pdesc {
+    position: relative;
+    z-index: 999;
+    padding: 1rem;
+    background-color: #1a1a20;
+    border-radius: 0 0 2rem 2rem;
 }
