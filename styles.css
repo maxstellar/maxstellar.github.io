@@ -27,7 +27,7 @@ strong {
 
 a {
     color: var(--accent);
-    text-decoration: none;
+    text-decoration: underline 1px;
     font-weight: 600;
 }
 
