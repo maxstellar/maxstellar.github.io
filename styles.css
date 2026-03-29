@@ -7,7 +7,7 @@ html, body {
     color: white;
     font-family: "JetBrains Mono", monospace;
     scroll-behavior: smooth;
-    font-size: 1.5vh;
+    font-size: clamp(15px, 1.5vh, 99999999px);
     margin: 0;
     padding: 0;
 }
@@ -73,28 +73,27 @@ a:hover {
 }
 
 #about {
-    display: block;
-    padding-top: 6rem;
-    align-items: center;
+    max-width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
 #projects {
-    display: block;
-    padding-top: 6rem;
-    align-items: center;
+    max-width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
 .everythingelse {
-    width: fit-content;
-    max-width: 65vw;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     z-index: 2;
@@ -135,7 +134,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     padding-top: 1rem;
 }
