@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,26 +7,50 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/x-icon" href="max-shooting-star-favicon.png">
         <title>maxstellar</title>
+        <script>
+            function scrollToAnchor(id) {
+                const targetElement = document.getElementById(id);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        </script>
     </head>
     <body>
-        <div id="starfield"></div>
+        <header>
+            <div style="display: flex;">
+                <button class="nav" onclick="scrollToAnchor('home')"><span>home</span></button>
+                <button class="nav" onclick="scrollToAnchor('about')"><span>about</span></button>
+                <button class="nav" onclick="scrollToAnchor('projects')"><span>projects</span></button>
+            </div>
+        </header>
         <div class="everythingelse">
-            <div class="landing">
+            <div id="home">
                 <img class="pfp" src="maxstellar.png">
                 <div class="nexttopfp">
                     <h1>hi, i'm <strong>maxstellar</strong>!</h1>
                     <p>you might know me from: <a href="https://hackclub.com/">hack club</a> • <a href="https://github.com/ivelchampion249/FishSol-Macro">sol's rng macros</a> • <a href="https://youtube.com/@maxstellar_">youtube</a></p>
                 </div>
             </div>
-            <div class="about">
+            <div id="about">
                 <h1>about</h1>
                 <p>welcome to my personal website! my name is <strong>max</strong> and i like to create silly things and make silly projects.</p>
-                <p>i'm a high school student from california who loves to create, whether it's a coding project, a short film, a youtube video, or politically inaccurate fanfiction.</p>
-                <p>in my free time, i like to watch movies, tv shows, and anime, build pcs and mechanical keyboards, and play whatever video game i am currently become obsessed with. i also like to listen to music! my favorite artists include laufey; tyler, the creator; tame impala; hatsune miku; suki waterhouse; and more!</p>
+                <p>in my free time, i like to:</p>
+                <ul>
+                    <li>watch <a href="https://letterboxd.com/maxstellar/">movies</a>, tv shows, <a href="https://myanimelist.net/profile/maxstellar">anime</a></li>
+                    <li>build custom mechanical keyboards + pcs</li>
+                    <li>play a wide variety of video games</li>
+                    <li>listen to <a href="https://www.last.fm/user/maxstellar">music</a></li>
+                </ul>
+                <img style="margin-left: auto; margin-right: auto; width: 90%; margin-top: 2rem;" src="la_la_land_shot.jpg">
+            </div>
+            <div id="projects">
+                <h1>projects</h1>
             </div>
         </div>
         
         <!-- used ai here, sorry :< would have made it myself but the mockup looked too good-->
+        <div id="starfield"></div>
         <script>
             const field = document.getElementById('starfield');
             for (let i = 0; i < 130; i++) {
