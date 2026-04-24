@@ -15,6 +15,7 @@ html, body {
     font-size: clamp(15px, 1.5vh, 99999999px);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Subtle gradient glow behind everything */
@@ -669,9 +670,28 @@ a.nav:hover {
         font-size: 0.9rem;
     }
 
-    body > header button,
+    body > header {
+        justify-content: flex-end;
+        padding-top: 0.75rem;
+        padding-bottom: 1.5rem;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    body > header > div {
+        max-width: 100%;
+    }
+
+    body > header::before {
+        display: none;
+    }
+
+    body > header button.nav {
+        display: none;
+    }
+
     body > header a.nav {
-        margin-right: 0.5rem;
+        margin-right: 0;
     }
 
     .post-wrap,
