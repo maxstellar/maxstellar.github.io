@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="icon" type="image/x-icon" href="../max-shooting-star-favicon.png">
+        <title>{{title}} — maxstellar</title>
+    </head>
+    <body class="blog-page">
+        <header>
+            <div style="display: flex;">
+                <a class="nav" href="/#home"><span>home</span></a>
+                <a class="nav" href="/#about"><span>about</span></a>
+                <a class="nav" href="/#projects"><span>projects</span></a>
+                <a class="nav nav-external active" href="/blog/">
+                    <span>blog</span>
+                    <svg class="ext-arrow" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M7 17L17 7"/>
+                        <polyline points="9 7 17 7 17 15"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <main class="post-wrap">
+            <a class="back-link" href="./">← back to blog</a>
+            <article class="post">
+                <header class="post-head">
+                    <h1>{{title}}</h1>
+                    <time>{{date}}</time>
+                </header>
+                <div class="post-body">{{content}}</div>
+            </article>
+        </main>
+
+        <div id="starfield"></div>
+        <script>
+            const field = document.getElementById('starfield');
+            for (let i = 0; i < 130; i++) {
+              const star = document.createElement('div');
+              star.className = 'star';
+              const size = Math.random() < 0.8 ? Math.random() * 1.5 + 0.5 : Math.random() * 2.5 + 1;
+              star.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random()*100}%;
+                top:${Math.random()*100}%;
+                --dur:${2.5 + Math.random()*4}s;
+                --delay:${Math.random()*5}s;
+                --bright:${0.3 + Math.random()*0.6};
+              `;
+              if (Math.random() < 0.08) star.style.background = '#f5e97a';
+              field.appendChild(star);
+            }
+        </script>
+
+        <footer style="text-align: center; padding: 1rem; font-size: 0.75rem; color: #737373;">© 2026 Vi Du Tran</footer>
+    </body>
+</html>
