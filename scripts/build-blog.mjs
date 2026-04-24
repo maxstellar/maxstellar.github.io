@@ -85,7 +85,6 @@ for (const file of entries) {
     const firstImage = extractFirstImage(content);
     const imageUrl = firstImage ? resolveImageUrl(firstImage) : null;
     const canonical = `${SITE_URL}/blog/${slug}.html`;
-    const isoDate = data.date ? new Date(data.date).toISOString() : '';
 
     const metaLines = [
         `<meta name="description" content="${escapeHtml(description)}">`,
@@ -96,7 +95,6 @@ for (const file of entries) {
         `<meta property="og:url" content="${escapeHtml(canonical)}">`,
         `<meta property="og:site_name" content="maxstellar">`,
     ];
-    if (isoDate) metaLines.push(`<meta property="article:published_time" content="${isoDate}">`);
     metaLines.push(`<meta name="twitter:card" content="${imageUrl ? 'summary_large_image' : 'summary'}">`);
     metaLines.push(`<meta name="twitter:title" content="${escapeHtml(title)}">`);
     metaLines.push(`<meta name="twitter:description" content="${escapeHtml(description)}">`);
