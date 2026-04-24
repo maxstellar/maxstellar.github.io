@@ -125,10 +125,14 @@ a:hover {
 #home {
     display: flex;
     align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
     height: 100vh;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    padding: 0 3rem;
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -187,6 +191,9 @@ p {
 }
 
 .nav {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
     color: white;
     background-color: var(--bg);
     font-weight: bold;
@@ -293,16 +300,12 @@ img {
 
 .projects {
     margin-top: 2.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    flex-wrap: wrap;
 }
 
 .project {
-    width: 30%;
-    min-width: 260px;
     display: flex;
     flex-direction: column;
     border-radius: 1.25rem;
@@ -387,6 +390,8 @@ a.nav:hover {
 
 .ext-arrow {
     flex-shrink: 0;
+    width: 18px;
+    height: 18px;
     transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -627,6 +632,12 @@ a.nav:hover {
     font-style: italic;
 }
 
+@media (max-width: 1024px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Responsive tweaks */
 @media (max-width: 720px) {
     #home {
@@ -651,15 +662,6 @@ a.nav:hover {
         max-width: 88vw;
         padding: 5rem 0;
         height: auto;
-    }
-
-    .projects {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .project {
-        width: 100%;
     }
 
     .nav {
