@@ -22,7 +22,7 @@
                     navButtons[id] = document.querySelector(`button[onclick="scrollToAnchor('${id}')"]`);
                 });
 
-                const observer = new IntersectionObserver((entries) => {
+                const navObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             sections.forEach(id => navButtons[id].classList.remove('active'));
@@ -33,7 +33,19 @@
                     threshold: 0.6
                 });
 
-                sections.forEach(id => observer.observe(document.getElementById(id)));
+                sections.forEach(id => navObserver.observe(document.getElementById(id)));
+
+                // Fade-in on scroll
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
             });
         </script>
     </head>
@@ -48,16 +60,17 @@
         <div class="everythingelse">
             <div id="home">
                 <img class="pfp" src="maxstellar.png">
-                <div class="nexttopfp">
+                <div class="nexttopfp reveal">
                     <h1>hi, i'm <strong>maxstellar</strong>!</h1>
                     <p>you might know me from: <a target="_blank" href="https://hackclub.com/">hack club</a> • <a target="_blank" href="https://github.com/ivelchampion249/FishSol-Macro">sol's rng macros</a> • <a target="_blank" href="https://youtube.com/@maxstellar_">youtube</a></p>
                     <div class="contact">
-                        <a target="_blank" href="https://github.com/maxstellar"><img src="GitHub_Invertocat_White.svg"></a>
-                        <a target="_blank" href="https://youtube.com/maxstellar_"><img style="margin-left: 0.75rem; padding-bottom: 0.275rem;" src="yt_icon_mono_dark.png"></a>
+                        <a target="_blank" href="https://github.com/maxstellar" aria-label="GitHub"><img src="GitHub_Invertocat_White.svg"></a>
+                        <a target="_blank" href="https://youtube.com/maxstellar_" aria-label="YouTube"><img src="yt_icon_mono_dark.png"></a>
                     </div>
                 </div>
+                <div class="scroll-hint">↓</div>
             </div>
-            <div id="about">
+            <div id="about" class="reveal">
                 <div style="width: fit-content;">
                     <h1>about</h1>
                     <p>welcome to my personal website! my name is <strong>max</strong> and i like to make silly things and work on cool projects.</p>
@@ -73,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div id="projects">
+            <div id="projects" class="reveal">
                 <h1>projects</h1>
                 <div class="projects">
                     <div class="project">
@@ -109,7 +122,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- used ai here, sorry :< would have made it myself but the mockup looked too good-->
         <div id="starfield"></div>
         <script>
@@ -130,6 +143,24 @@
               if (Math.random() < 0.08) star.style.background = '#f5e97a';
               field.appendChild(star);
             }
+
+            // Occasional shooting star (fits the "stellar" theme)
+            function spawnShootingStar() {
+              const s = document.createElement('div');
+              s.className = 'shooting-star';
+              s.style.left = (10 + Math.random() * 70) + '%';
+              s.style.top = (Math.random() * 40) + '%';
+              field.appendChild(s);
+              setTimeout(() => s.remove(), 1800);
+            }
+            function scheduleShootingStar() {
+              const delay = 4000 + Math.random() * 8000;
+              setTimeout(() => {
+                spawnShootingStar();
+                scheduleShootingStar();
+              }, delay);
+            }
+            scheduleShootingStar();
         </script>
 
         <footer style="text-align: center; padding: 1rem; font-size: 0.75rem; color: #737373;">© 2026 Vi Du Tran</footer>
