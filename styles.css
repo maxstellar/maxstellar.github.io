@@ -692,6 +692,13 @@ a.nav:hover {
 
     body > header a.nav {
         margin-right: 0;
+        padding: 0.7rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    body > header a.nav .ext-arrow {
+        width: 16px;
+        height: 16px;
     }
 
     .post-wrap,
