@@ -111,6 +111,7 @@ for (const file of entries) {
         .replaceAll('{{content}}', html);
 
     fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), page);
+    if (data.unlisted) continue;
     posts.push({ slug, title, date: data.date, dateStr, readTime });
 }
 
