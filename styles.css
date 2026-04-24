@@ -213,16 +213,16 @@ p {
     box-shadow: 0 0 18px -4px var(--accent-dim);
 }
 
-header button,
-header a.nav {
+body > header button,
+body > header a.nav {
     margin-right: 1rem;
 }
 
-header > div > *:last-child {
+body > header > div > *:last-child {
     margin-right: 0;
 }
 
-header {
+body > header {
     z-index: 100;
     width: 100%;
     display: flex;
@@ -233,7 +233,7 @@ header {
     padding-bottom: 2rem;
 }
 
-header::before {
+body > header::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -667,8 +667,8 @@ a.nav:hover {
         font-size: 0.9rem;
     }
 
-    header button,
-    header a.nav {
+    body > header button,
+    body > header a.nav {
         margin-right: 0.5rem;
     }
 
