@@ -48,6 +48,8 @@ for (const file of entries) {
     const slug = slugify(file);
     const title = data.title || slug;
     const dateStr = data.date ? formatDate(data.date) : '';
+    const wordCount = content.trim().split(/\s+/).filter(Boolean).length;
+    const readTime = Math.max(1, Math.ceil(wordCount / 200));
     const html = marked.parse(content);
 
     const page = postTpl
@@ -56,7 +58,7 @@ for (const file of entries) {
         .replaceAll('{{content}}', html);
 
     fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), page);
-    posts.push({ slug, title, date: data.date, dateStr });
+    posts.push({ slug, title, date: data.date, dateStr, readTime });
 }
 
 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -65,7 +67,7 @@ const listHtml = posts.length
     ? posts
           .map(
               (p) =>
-                  `<li class="post-entry"><a href="./${p.slug}.html"><span class="post-title">${escapeHtml(p.title)}</span><span class="post-date">${escapeHtml(p.dateStr)}</span></a></li>`
+                  `<li class="post-entry"><a href="./${p.slug}.html"><span class="post-title">${escapeHtml(p.title)}</span><span class="post-date">${p.readTime} min read · ${escapeHtml(p.dateStr)}</span></a></li>`
           )
           .join('\n            ')
     : '<li class="empty">no posts yet.</li>';
