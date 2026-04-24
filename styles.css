@@ -384,6 +384,10 @@ a.nav {
     gap: 0.45rem;
 }
 
+.nav-home-mobile {
+    display: none;
+}
+
 a.nav:hover {
     text-decoration: none;
     text-shadow: none;
@@ -699,6 +703,18 @@ a.nav:hover {
     body > header a.nav .ext-arrow {
         width: 16px;
         height: 16px;
+    }
+
+    body.blog-page > header {
+        justify-content: flex-start;
+    }
+
+    body.blog-page > header a.nav.nav-external {
+        display: none;
+    }
+
+    body.blog-page > header a.nav-home-mobile {
+        display: inline-flex;
     }
 
     .post-wrap,
