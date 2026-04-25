@@ -1,6 +1,6 @@
 ---
 title: the issue of ai slop
-date: 2026-04-24
+date: 2026-04-25
 unlisted: true
 ---
 
@@ -59,6 +59,7 @@ In theory, these are good ways to filter through AI slop, but in practice, <u>pe
 The solution is to detail these exactly. What are reviewers looking for? How should we (particpants) be using AI? How shouldn't we be?
 
 ❌ "Yeah, keep it under x%"
+
 ✅ "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
 
 In fact, I'll do you one better - here's a general modifiable template that YSWSes can use for a clearer and more tangible AI guideline.
@@ -85,6 +86,26 @@ Also, how do we as reviewers uphold a common standard of what counts as AI slop?
 > **Code:** Overly verbose variable names? Excessive error handling / edge cases no one but an AI would think of?
 
 Note that this rubric is not exhaustive and is meant for use as a tool. It's not designed to evaluate projects perfectly, it's meant to help you with common signs of AI usage--the final determination and review of a project should still be up to you.
+
+## intentional YSWS design
+
+No, this is not the aggressive rethinking of the weighted grant model you've been hoping for. Many a smarter person than I have tried and failed to tackle the WG/WP system, and as such I will not be attempting to do so today.
+
+The answer to AI slop is to make it impossible to make AI slop per your constraints on the program or rules for submission. This solution will not work for a good amount of YSWSes (most likely the larger ones, which is a bit counterintuitive since they are the ones facing the most AI slop in the first place), but for smaller YSWSes, this will work like a charm.
+
+1. Add an interesting constraint to your YSWS
+
+For [#onekey](https://onekey.dino.icu/), I'm challenging people to build projects that only use one key as input. Others that fit this model include [#saycheese](https://saycheese.hackclub.com/) and #shrink by @Anson Chung.
+
+These sorts of constraints are difficult to slop - they at the very least require the prompter to sit there and think about the project and be creative with it, toeing the line between responsible and irresponsible AI usage. You can't just sit there and say "make me a website, make no mistakes" and watch as Claude works away at another B2B SaaS concept website.
+
+2. Submission prompts
+
+Ask questions that require reflection, such as: "What were some challenges you faced? What was the hardest part? What was your favorite part?"
+
+It won't perfectly filter out AI slop, and it won't prevent it from being submitted, but it will give reviewers somewhat of an immediate BS detector.
+
+If these were implemented, our programs could be better suited to dissuade AI slop and incentivize what we want submitted--high quality projects that promote learning and building and growing. TBD
 
 ## VAC bans
 
