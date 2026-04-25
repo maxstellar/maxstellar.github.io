@@ -288,8 +288,6 @@ img {
     padding: 0 !important;
 }
 
-/* Fade-in-on-scroll */
-
 .projects {
     margin-top: 2.5rem;
     display: grid;
@@ -369,7 +367,6 @@ footer {
     z-index: 1;
 }
 
-/* External-link nav button (blog) */
 a.nav {
     text-decoration: none;
     gap: 0.45rem;
@@ -634,7 +631,6 @@ a.nav:hover {
     }
 }
 
-/* Responsive tweaks */
 @media (max-width: 720px) {
     #home {
         flex-direction: column;
