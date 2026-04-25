@@ -79,7 +79,9 @@ YSWS organizers, reviewers, others, feel free to add or remove bullet points as 
 Also, how do we as reviewers uphold a common standard of what counts as AI slop? Rubric!
 
 > **Metagame:** All / lot of the code in a single, initial commit? AI-sounding comments? Placeholder tokens, data, or statistics?
+>
 > **Common AI Patterns:** Unnatural shoehorning of emojis, gradients? Overuse of "Badges" or "pills"? Common AI animations? Content hallucinations?
+>
 > **Code:** Overly verbose variable names? Excessive error handling / edge cases no one but an AI would think of?
 
 Note that this rubric is not exhaustive and is meant for use as a tool. It's not designed to evaluate projects perfectly, it's meant to help you with common signs of AI usage--the final determination and review of a project should still be up to you.
