@@ -180,6 +180,7 @@ a:hover {
     font-size: 0.95rem;
     animation: bob 2.2s ease-in-out infinite;
     opacity: 0.65;
+    transition: opacity 0.4s ease;
 }
 
 @keyframes bob {
@@ -288,16 +289,6 @@ img {
 }
 
 /* Fade-in-on-scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.reveal.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .projects {
     margin-top: 2.5rem;
@@ -737,5 +728,4 @@ a.nav:hover {
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
     }
-    .reveal { opacity: 1; transform: none; }
 }

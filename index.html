@@ -37,16 +37,13 @@
                 window.addEventListener('scroll', updateActiveNav, { passive: true });
                 updateActiveNav();
 
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('in-view');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15 });
+                const scrollHint = document.querySelector('.scroll-hint');
+                const updateScrollHint = () => {
+                    scrollHint.style.opacity = window.scrollY > 0 ? '0' : '1';
+                };
+                window.addEventListener('scroll', updateScrollHint, { passive: true });
+                updateScrollHint();
 
-                document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
             });
         </script>
     </head>
