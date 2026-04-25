@@ -1,7 +1,6 @@
 ---
 title: the issue of ai slop
 date: 2026-04-25
-unlisted: true
 ---
 
 Recently, I was a reviewer for a Hack Club program called [Jackpot](https://jackpot.hackclub.com/). The program itself was incredibly cool, and hats off to Emma for putting so much work into organizing it, but the reviews were... depressing. Emma herself said [in a Slack message](https://hackclub.slack.com/archives/C0ADEGZL5HD/p1775945588784089):
