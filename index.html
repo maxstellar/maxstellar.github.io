@@ -24,18 +24,18 @@
                     navButtons[id] = document.querySelector(`button[onclick="scrollToAnchor('${id}')"]`);
                 });
 
-                const navObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            sections.forEach(id => navButtons[id].classList.remove('active'));
-                            navButtons[entry.target.id].classList.add('active');
-                        }
+                const updateActiveNav = () => {
+                    let current = sections[0];
+                    sections.forEach(id => {
+                        const top = document.getElementById(id).getBoundingClientRect().top;
+                        if (top <= window.innerHeight * 0.5) current = id;
                     });
-                }, {
-                    threshold: 0.6
-                });
+                    sections.forEach(id => navButtons[id].classList.remove('active'));
+                    navButtons[current].classList.add('active');
+                };
 
-                sections.forEach(id => navObserver.observe(document.getElementById(id)));
+                window.addEventListener('scroll', updateActiveNav, { passive: true });
+                updateActiveNav();
 
                 const revealObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
