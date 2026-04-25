@@ -57,6 +57,7 @@ Some programs seem to have some arbitrary percentage limit in terms of AI usage.
 In theory, these are good ways to filter through AI slop, but in practice, <u>percentages do not work.</u> There's no way to detect how much code was AI and how much wasn't. At the end of the day, these random numbers are just a nothing burger. As a reviewer, I look at a project and I try to gauge whether human effort was put into the project. I try to gauge if AI was used for small, minor tasks, or if it was used to generate the main functionality of the project. I try to gauge if the user has gone "uhhhh claude make me a website," or sat there meticulously thinking of things to add, writing out to Claude exactly what they want and how they want Claude to implement it.
 
 The solution is to detail these exactly. What are reviewers looking for? How should we (particpants) be using AI? How shouldn't we be?
+
 ❌ "Yeah, keep it under x%"
 ✅ "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
 
@@ -77,9 +78,9 @@ YSWS organizers, reviewers, others, feel free to add or remove bullet points as 
 
 Also, how do we as reviewers uphold a common standard of what counts as AI slop? Rubric!
 
-Metagame: All / lot of the code in a single, initial commit? AI-sounding comments? Placeholder tokens, data, or statistics?
-Common AI Patterns: Overuse of emojis? Gradients? "Badges"? Common AI animations? Content hallucinations?
-Code: Overly verbose variable names? Excessive error handling / edge cases no one but an AI would think of?
+> **Metagame:** All / lot of the code in a single, initial commit? AI-sounding comments? Placeholder tokens, data, or statistics?
+> **Common AI Patterns:** Unnatural shoehorning of emojis, gradients? Overuse of "Badges" or "pills"? Common AI animations? Content hallucinations?
+> **Code:** Overly verbose variable names? Excessive error handling / edge cases no one but an AI would think of?
 
 Note that this rubric is not exhaustive and is meant for use as a tool. It's not designed to evaluate projects perfectly, it's meant to help you with common signs of AI usage--the final determination and review of a project should still be up to you.
 
