@@ -79,6 +79,7 @@ for (const file of entries) {
     const dateStr = data.date ? formatDate(data.date) : '';
     const wordCount = content.trim().split(/\s+/).filter(Boolean).length;
     const readTime = Math.max(1, Math.ceil(wordCount / 200));
+    const forPage = dateStr + " · " + `${readTime} min read`
     const html = marked.parse(content);
 
     const description = data.description || extractDescription(content);
@@ -106,7 +107,7 @@ for (const file of entries) {
 
     const page = postTpl
         .replaceAll('{{title}}', escapeHtml(title))
-        .replaceAll('{{date}}', escapeHtml(dateStr))
+        .replaceAll('{{date}}', escapeHtml(forPage))
         .replaceAll('{{social_meta}}', socialMeta)
         .replaceAll('{{content}}', html);
 
