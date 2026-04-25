@@ -10,9 +10,9 @@ Recently, I was a reviewer for a Hack Club program called [Jackpot](https://jack
 
 I remember getting in a call with @owais and going through reviews, only for us to send every other project to each other, asking "is this AI again?" The worst part is that this isn't even an issue unique to Jackpot. It's also known that Flavortown faces issues with AI slop as well, to the point where Hack Clubbers joke about it quite often on the Slack. The AI issue has been getting progressively more prominent as time goes on, and it's worth a think over.
 
-This isn't to say there are no good projects coming to YSWSes anymore. In fact, it's quite the opposite. During my time reviewing for Hack Club: The Game and Jackpot, I saw so many creative, high-effort, and amazing projects submitted, and it truly made me incredibly proud of our community (if not a little bit disappointed in myself for being so unaccomplished). But the truth is, a lot of slop is being submitted, and some of it even makes it past our review process. So, what can we do to reduce this?
+This isn't to say there are no good projects coming to YSWSes anymore. In fact, it's quite the opposite. During my time reviewing for Hack Club: The Game and Jackpot, I saw so many creative, high-effort, and amazing projects submitted, and it truly made me incredibly proud of our community (if not a little bit disappointed in myself for being so unaccomplished). But it's also true that a lot of slop is being submitted, and some of it even makes it past our review process. So, what can we do to reduce this?
 
-## what is ai slop?
+## what is AI slop?
 
 To address AI slop, we must first define what it is. Originally, this blog post was meant to do that: figure out what counts as too much AI usage and what is not. I put out a question in my personal channel [#maxs-cozy-planet](https://hackclub.enterprise.slack.com/archives/C0AL1T3CZ2S) on Slack, which sparked an extremely active thread of discussion, some of which was extremely funny, but ultimately went nowhere. We failed to arrive at any consensus.
 
@@ -31,7 +31,7 @@ Using this, let's together arrive at a definition for what "AI slop" is:
 
 This is nowhere **near** a perfect definition of what defines AI slop; the term is honestly very subjective. For the purposes of this blog post, let's use mine for now.
 
-## why is ai slop so prevalent now?
+## why is AI slop so prevalent now?
 
 It probably has to do with how big Hack Club is getting. It's not the whole cause, of course, but it would make sense. Hack Club is built on hackers -- people who build because they want to build, create because they want to create. As we expand, we gain more of a second type of Hack Clubber: the ones who join simply for prizes and rewards.
 
@@ -39,11 +39,11 @@ This isn't necessarily bad. The truth is, a lot of the hackers mentioned earlier
 
 But this isn't the case for all type 2 Hack Clubbers. Some are just looking to get prizes + get out. That's perfectly valid--but it's the methods you employ to achieve such ends that get you put into AI slop timeout corner.
 
-The truth is, the fastest way to make working projects is to yell at Claude until it spits out something savory. Oh what the hack, even I'm guilty of this. The code for this blog was mostly vibecoded too, since I was too lazy to actually go and read documentation and watch tutorials on how to make one. I'd like to justify it to myself, saying that I learnt it from the AI or by reading the AI's code... and while this may be partially true, it doesn't beat actually learning how to make it myself, and making it myself... If you asked me to replicate it right now... I probably couldn't!
+The truth is, the fastest way to make working projects is to yell at Claude until it spits out something savory. Oh what the hack, even I'm guilty of this. The code for this blog was mostly vibecoded too, since I was too lazy to actually go and read documentation and watch tutorials on how to make one. I'd like to justify it to myself, saying that I learnt it from the AI or by reading the AI's code... and while this may be partially true, it doesn't beat actually learning how to make it myself, and making it myself. If you asked me to replicate it right now... I probably couldn't!
 
 What this means for us is: we're getting lots of people who are joining for prizes and prizes alone, and we're growing into an age where it's extremely easy to generate the projects needed to earn the prizes. Put two and two together... the fastest and easiest way to get prizes is to AI generate projects, and so, instead of learning, building, making, creating... people are AI slopping.
 
-I don't want to make you think that "ohhhh, everyone is just out to fraud hours and make slop to get prizes!" Truthfully, a good amount of people may not even realize that they have made AI slop; we could do a better job helping these people understand what is so great about making projects.
+I don't want to make you think that "ohhhh, everyone is just out to fraud hours and make slop to get prizes!" Truthfully, a good amount of people may not even realize that they have made AI slop; we could do a better job of preventing AI slop from happening in the first place.
 
 I've been doing a whole Latta yapping, and not a whole Latta giving suggestions--so, let's talk solutions.
 
@@ -56,6 +56,51 @@ Some programs seem to have some arbitrary percentage limit in terms of AI usage.
 
 In theory, these are good ways to filter through AI slop, but in practice, <u>percentages do not work.</u> There's no way to detect how much code was AI and how much wasn't. At the end of the day, these random numbers are just a nothing burger. As a reviewer, I look at a project and I try to gauge whether human effort was put into the project. I try to gauge if AI was used for small, minor tasks, or if it was used to generate the main functionality of the project. I try to gauge if the user has gone "uhhhh claude make me a website," or sat there meticulously thinking of things to add, writing out to Claude exactly what they want and how they want Claude to implement it.
 
-The solution is to detail these exactly. What are reviewers looking for? How should we (particpants) be using AI? How shouldn't we be? Not "Yeah, keep it under x%" but "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
+The solution is to detail these exactly. What are reviewers looking for? How should we (particpants) be using AI? How shouldn't we be?
+❌ "Yeah, keep it under x%"
+✅ "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
 
-##
+In fact, I'll do you one better - here's a general modifiable template that YSWSes can use for a clearer and more tangible AI guideline.
+
+> Excessive AI usage is **NOT** allowed. When reviewing projects, we look for genuine human effort in both the final product and the thought behind it. There is a difference between someone who typed "make me a website" and someone who carefully considered what to build, made deliberate decisions, and used AI to help execute specific parts.
+>
+> You are allowed to use AI in minor and supporting ways such as:
+>
+> - small improvements and touch-ups
+> - simple, repetitive tasks that would be tedious by hand
+> - cleaning up messy code (just commit first so there's a record of your code before AI touched it!)
+>
+> A good rule of thumb: could a reviewer still see your personality on the project if AI were removed? If the core of your project (functionality, structure, style, etc) were all AI-generated, it won't pass review.
+
+This eliminates the issue of vague nothing burger, clearly defining what is okay and what would
+YSWS organizers, reviewers, others, feel free to add or remove bullet points as you see fit, reword the lead-in and conclusion, add more. This is completely free for you to use or take inspiration from.
+
+Also, how do we as reviewers uphold a common standard of what counts as AI slop? Rubric!
+
+Metagame: All / lot of the code in a single, initial commit? AI-sounding comments? Placeholder tokens, data, or statistics?
+Common AI Patterns: Overuse of emojis? Gradients? "Badges"? Common AI animations? Content hallucinations?
+Code: Overly verbose variable names? Excessive error handling / edge cases no one but an AI would think of?
+
+Note that this rubric is not exhaustive and is meant for use as a tool. It's not designed to evaluate projects perfectly, it's meant to help you with common signs of AI usage--the final determination and review of a project should still be up to you.
+
+## VAC bans
+
+The time for blaming ourselves is over. At some point, people begin to know what they are doing when they slop. It is intentional. Calculated.
+
+![Prox2 anonymous message saying "We should add a VAC ban-like thingy for YSWSes"](images/vac-bans-anon.png)
+
+The idea is simple: Hackatime ban or ban-adjacent system for those who have submitted AI slop more than once, and stop these sloppers from taking up valuable reviewer bandwidth ~~and to keep reviewer faith in humanity.~~
+
+Pros:
+
+- Infra is already there with the fraud ban system
+- Would greatly reduce the amount of AI slop submitted by repeat offenders
+- Gives reviewers a central authority to back them up when submitters argue about their rejections/bans
+
+Cons:
+
+- "AI slop" is subjective and may change from program to program
+- False bans are much heavier + permanent-feeling than rejections
+- Might alienate legitimate learners who are just figuring things out, testing the waters
+
+The benefits are definitely there, and I'm confident these problems can be ironed out with thought. The main question is whether the benefits are significant enough to justify committing the time to workshop and create this system.
