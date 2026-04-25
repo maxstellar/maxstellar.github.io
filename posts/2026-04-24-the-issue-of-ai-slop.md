@@ -4,7 +4,7 @@ date: 2026-04-25
 unlisted: true
 ---
 
-Recently, I was a reviewer for a Hack Club program called [Jackpot](https://jackpot.hackclub.com/). The program itself was incredibly cool, and hats off to Emma for putting so much work and effort into organizing it, but the reviews were... depressing. Emma herself said [in a Slack message](https://hackclub.slack.com/archives/C0ADEGZL5HD/p1775945588784089):
+Recently, I was a reviewer for a Hack Club program called [Jackpot](https://jackpot.hackclub.com/). The program itself was incredibly cool, and hats off to Emma for putting so much work into organizing it, but the reviews were... depressing. Emma herself said [in a Slack message](https://hackclub.slack.com/archives/C0ADEGZL5HD/p1775945588784089):
 
 > [A]round 80% of the reviews, was spent rejecting entire projects due to clear, full use of AI without minimal human contribution. Many of the submitted websites look almost identical, heavily vibe-coded, and in some cases include scripts designed to automatically track or generate hours.
 
@@ -35,17 +35,21 @@ This is nowhere **near** a perfect definition of what defines AI slop; the term 
 
 It probably has to do with how big Hack Club is getting. It's not the whole cause, of course, but it would make sense. Hack Club is built on hackers -- people who build because they want to build, create because they want to create. As we expand, we gain more of a second type of Hack Clubber: the ones who join simply for prizes and rewards.
 
+![Screenshot of Hack Club website saying "Welcome to Hack Club / We are 111,620 teen hackers"](images/wth-111k.png)
+
 This isn't necessarily bad. The truth is, a lot of the hackers mentioned earlier (build because they want to build) started out as this second type of Hack Clubber. I joined looking for free stuff, and gradually fell in love with coding for the sake of coding and making for the sake of making.
 
 But this isn't the case for all type 2 Hack Clubbers. Some are just looking to get prizes + get out. That's perfectly valid--but it's the methods you employ to achieve such ends that get you put into AI slop timeout corner.
 
-The truth is, the fastest way to make working projects is to yell at Claude until it spits out something savory. Oh what the hack, even I'm guilty of this. The code for this blog was mostly vibecoded too, since I was too lazy to actually go and read documentation and watch tutorials on how to make one. I'd like to justify it to myself, saying that I learnt it from the AI or by reading the AI's code... and while this may be partially true, it doesn't beat actually learning how to make it myself, and making it myself. If you asked me to replicate it right now... I probably couldn't!
+The truth is, the fastest way to make working projects is to yell at Claude until it spits out something savory. Oh what the hack, even I'm guilty of this. The code for this blog was mostly vibecoded too, since I was too lazy to actually go and read documentation and watch tutorials on how to make one. I'd like to justify it to myself, saying that I learnt it from the AI or by reading the AI's code, but it certainly doesn't beat actually learning how to make it myself, and then making it myself. If you asked me to replicate it right now... I probably couldn't!
+
+![Me prompting Claude, asking "How can I add a blog to my website? list some ideas"](images/how-blog-website-claude.png)
 
 What this means for us is: we're getting lots of people who are joining for prizes and prizes alone, and we're growing into an age where it's extremely easy to generate the projects needed to earn the prizes. Put two and two together... the fastest and easiest way to get prizes is to AI generate projects, and so, instead of learning, building, making, creating... people are AI slopping.
 
 I don't want to make you think that "ohhhh, everyone is just out to fraud hours and make slop to get prizes!" Truthfully, a good amount of people may not even realize that they have made AI slop; we could do a better job of preventing AI slop from happening in the first place.
 
-I've been doing a whole Latta yapping, and not a whole Latta giving suggestions--so, let's talk solutions.
+I've been doing a whole Latta yapping, and not a whole Latta giving suggestions--so, let's talk solutions, roughly from easiest to hardest to implement.
 
 ## clearer AI guidelines
 
@@ -58,9 +62,9 @@ In theory, these are good ways to filter through AI slop, but in practice, <u>pe
 
 The solution is to detail these exactly. What are reviewers looking for? How should we (particpants) be using AI? How shouldn't we be?
 
-❌ "Yeah, keep it under x%"
-
-✅ "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
+> ❌ "Yeah, keep it under x%"
+>
+> ✅ "Only use AI for mundane tasks! Make sure you still understand your code! Put effort into making it look human-made!"
 
 In fact, I'll do you one better - here's a general modifiable template that YSWSes can use for a clearer and more tangible AI guideline.
 
@@ -74,8 +78,7 @@ In fact, I'll do you one better - here's a general modifiable template that YSWS
 >
 > A good rule of thumb: could a reviewer still see your personality on the project if AI were removed? If the core of your project (functionality, structure, style, etc) were all AI-generated, it won't pass review.
 
-This eliminates the issue of vague nothing burger, clearly defining what is okay and what would
-YSWS organizers, reviewers, others, feel free to add or remove bullet points as you see fit, reword the lead-in and conclusion, add more. This is completely free for you to use or take inspiration from.
+This eliminates the issue of vague nothing burger, clearly defining what is okay and what would get rejected. YSWS organizers, reviewers, others, feel free to add or remove bullet points as you see fit, reword the lead-in and conclusion, add more. This is completely free for you to use or take inspiration from.
 
 Also, how do we as reviewers uphold a common standard of what counts as AI slop? Rubric!
 
@@ -91,21 +94,21 @@ Note that this rubric is not exhaustive and is meant for use as a tool. It's not
 
 No, this is not the aggressive rethinking of the weighted grant model you've been hoping for. Many a smarter person than I have tried and failed to tackle the WG/WP system, and as such I will not be attempting to do so today.
 
-The answer to AI slop is to make it impossible to make AI slop per your constraints on the program or rules for submission. This solution will not work for a good amount of YSWSes (most likely the larger ones, which is a bit counterintuitive since they are the ones facing the most AI slop in the first place), but for smaller YSWSes, this will work like a charm.
+The answer to AI slop is to make it impossible to make AI slop per your constraints on the program or rules for submission. This solution will not work for a good amount of YSWSes (most likely the larger ones, which is a bit counterintuitive since they are the ones facing the most AI slop in the first place), but for smaller YSWSes, this will work like a charm. Here's how:
 
-1. Add an interesting constraint to your YSWS
+**1. Add an interesting constraint to your YSWS**
 
 For [#onekey](https://onekey.dino.icu/), I'm challenging people to build projects that only use one key as input. Others that fit this model include [#saycheese](https://saycheese.hackclub.com/) and #shrink by @Anson Chung.
 
 These sorts of constraints are difficult to slop - they at the very least require the prompter to sit there and think about the project and be creative with it, toeing the line between responsible and irresponsible AI usage. You can't just sit there and say "make me a website, make no mistakes" and watch as Claude works away at another B2B SaaS concept website.
 
-2. Submission prompts
+**2. Submission prompts**
 
 Ask questions that require reflection, such as: "What were some challenges you faced? What was the hardest part? What was your favorite part?"
 
 It won't perfectly filter out AI slop, and it won't prevent it from being submitted, but it will give reviewers somewhat of an immediate BS detector.
 
-If these were implemented, our programs could be better suited to dissuade AI slop and incentivize what we want submitted--high quality projects that promote learning and building and growing. TBD
+If these were implemented, our programs could be better suited to dissuade AI slop and incentivize what we want submitted--high quality projects that promote learning and building and growing.
 
 ## VAC bans
 
@@ -113,7 +116,7 @@ The time for blaming ourselves is over. At some point, people begin to know what
 
 ![Prox2 anonymous message saying "We should add a VAC ban-like thingy for YSWSes"](images/vac-bans-anon.png)
 
-The idea is simple: Hackatime ban or ban-adjacent system for those who have submitted AI slop more than once, and stop these sloppers from taking up valuable reviewer bandwidth ~~and to keep reviewer faith in humanity.~~
+The idea is simple: Hackatime ban or ban-adjacent system for those who have submitted AI slop more than once.
 
 Pros:
 
@@ -127,4 +130,10 @@ Cons:
 - False bans are much heavier + permanent-feeling than rejections
 - Might alienate legitimate learners who are just figuring things out, testing the waters
 
-The benefits are definitely there, and I'm confident these problems can be ironed out with thought. The main question is whether the benefits are significant enough to justify committing the time to workshop and create this system.
+I think the tradeoffs are worth it, and with some workshopping, the cons can be ironed out. Implementation of some sort of system, whether it's a literal Hackatime ban or some sort of system flagging offenders on the reviewer end, would stop sloppers from taking up valuable reviewer bandwidth ~~and to keep reviewer faith in humanity.~~
+
+## conclusion
+
+The point I'm trying to make is... AI slop is a big issue for Hack Club. Whether you're a Hack Clubber browsing Flavortown's explore page and observing the amount of vibecoded projects, or a reviewer rejecting your 5th vibecoded project in the same hour, or a program organizer getting fined for letting slop enter the unified DB... it's not just my problem, not just your problem, not just HQ's problem, but it's a problem for all of us.
+
+This isn't a simple problem to address. The line between responsible AI use and lazy vibecode is blurry, and all of us--participants, reviewers, organizers--will get it wrong sometimes. With Hack Club growing the way it is, and [Stardance](https://stardance.hackclub.com/) right around the corner poised to attract thousands if not tens of thousands of new Hack Clubbers, it's important to acknowledge that we will never be completely free of AI slop. But if we can build a community that genuinely cares, with programs that set clear expectations, ideas that make real building worth it, and systems that stop bad actors from gaming the whole thing... maybe we can make sure that what all of us have grown to love about Hack Club--the way it turns prize-hungry kids into passionate, inspired builders--wins out over AI slop.
