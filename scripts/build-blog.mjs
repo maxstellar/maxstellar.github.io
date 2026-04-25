@@ -46,10 +46,10 @@ const extractDescription = (md) => {
         .trim();
     const firstPara = stripped.split(/\n{2,}/)[0] || '';
     const clean = firstPara.replace(/\s+/g, ' ').trim();
-    if (clean.length <= 200) return clean;
+    if (clean.length <= 200) return clean.replace(/\.{3,}$/, '').trimEnd();
     const cut = clean.slice(0, 200);
     const lastSpace = cut.lastIndexOf(' ');
-    return (lastSpace > 120 ? cut.slice(0, lastSpace) : cut) + '…';
+    return (lastSpace > 120 ? cut.slice(0, lastSpace) : cut).replace(/\.{3,}$/, '').trimEnd() + '…';
 };
 
 const extractFirstImage = (md) => {
