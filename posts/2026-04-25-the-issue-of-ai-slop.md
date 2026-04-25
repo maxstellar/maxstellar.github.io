@@ -49,7 +49,13 @@ What this means for us is: we're getting lots of people who are joining for priz
 
 I don't want to make you think that "ohhhh, everyone is just out to fraud hours and make slop to get prizes!" Truthfully, a good amount of people may not even realize that they have made AI slop; we could do a better job of preventing AI slop from happening in the first place.
 
-I've been doing a whole Latta yapping, and not a whole Latta giving suggestions--so, let's talk solutions, roughly from easiest to hardest to implement.
+### Sidebar - why did Jackpot receive so much more slop?
+
+Jackpot was an extremely generous program (which is great) in that its hourly rate ($6/hr) was extremely high versus other Hack Club programs, as well as the fact that the Jackpot IRL event was free to attend (no hours needed for an invite). However, I think this ultimately bit the program in the back: the direct translation of hours to money, the event being free to attend -> shipping solely being for prizes, and the prizes having near equal values around the board regardless of hacker value translated to the program feeling sort of like a job, even.
+
+This section isn't meant to criticize Jackpot, but moreso analyze exactly why this amazing, generous, and creative program faced the issues that it did. The truth is that working with Emma and everyone else on the Jackpot was such a fun time, and I'm extremely grateful they invited me to help review. I'm so excited for what she and her team will do next.
+
+Okay. Whew. That was a lot. Sorry. I've been doing a whole Latta yapping, and not a whole Latta giving suggestions--so, let's talk solutions, roughly from easiest to hardest to implement.
 
 ## clearer AI guidelines
 
