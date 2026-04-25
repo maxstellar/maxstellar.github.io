@@ -52,7 +52,7 @@ I've been doing a whole Latta yapping, and not a whole Latta giving suggestions-
 Some programs seem to have some arbitrary percentage limit in terms of AI usage. Off the top of my head, HCTG lists a 30% AI limit and Macondo has a 40% limit.
 
 ![Section from HCTG submission guidelines detailing 30% AI limit](images/hctg-30-percent.png)
-![Message from @NotARoomba detailing a 40% AI limit](image.png)
+![Message from @NotARoomba detailing a 40% AI limit](images/notaroomba-40-percent.png)
 
 In theory, these are good ways to filter through AI slop, but in practice, <u>percentages do not work.</u> There's no way to detect how much code was AI and how much wasn't. At the end of the day, these random numbers are just a nothing burger. As a reviewer, I look at a project and I try to gauge whether human effort was put into the project. I try to gauge if AI was used for small, minor tasks, or if it was used to generate the main functionality of the project. I try to gauge if the user has gone "uhhhh claude make me a website," or sat there meticulously thinking of things to add, writing out to Claude exactly what they want and how they want Claude to implement it.
 
