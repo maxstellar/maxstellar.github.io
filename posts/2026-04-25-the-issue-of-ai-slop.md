@@ -115,7 +115,7 @@ It won't perfectly filter out AI slop, and it won't prevent it from being submit
 
 **If these were implemented...**
 
-...our programs could be better suited to dissuade AI slop and incentivize what we want submitted--high quality projects that promote learning and building and growing. We would also have more interesting YSWSes to participate in, and more content to look at (namely, reflections might be interesting for something like [the Hack Club Magazine](https://magazine.hackclub.com/)).
+...our programs could be better suited to deter AI slop and incentivize what we want submitted--high quality projects that promote learning and building and growing. We would also have more interesting YSWSes to participate in, and more content to look at (namely, reflections might be interesting for something like [the Hack Club Magazine](https://magazine.hackclub.com/)).
 
 ## VAC bans
 
