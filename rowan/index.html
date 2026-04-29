@@ -37,6 +37,11 @@
       }
       randomize();
       document.addEventListener("click", randomize);
+      document.addEventListener("keypress", (event) => {
+        if (event.key == " ") {
+          randomize();
+        }
+      });
     </script>
   </body>
 </html>
