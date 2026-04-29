@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rowan</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="rowan"
+      style="width: 100vw; height: 100vh; object-fit: fill; display: block"
+    />
+    <script>
+      rowan = document.getElementById("rowan");
+      rowan.src = "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+    </script>
+  </body>
+</html>
