@@ -16,8 +16,26 @@
       style="width: 100vw; height: 100vh; object-fit: fill; display: block"
     />
     <script>
-      rowan = document.getElementById("rowan");
-      rowan.src = "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+      const rowan = document.getElementById("rowan");
+      let lastrowan = null;
+      function randomize() {
+        let toBeRowan =
+          "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+        if (lastrowan) {
+          while (true) {
+            if (toBeRowan == lastrowan) {
+              toBeRowan =
+                "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+            } else {
+              break;
+            }
+          }
+        }
+        rowan.src = toBeRowan;
+        lastrowan = toBeRowan;
+      }
+      randomize();
+      document.addEventListener("mousedown", randomize);
     </script>
   </body>
 </html>
