@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rowan - Music Lab</title>
+    <link rel="icon" type="image/x-icon" href="transgender_flag.png" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .away-with-you {
+        opacity: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="rowan-is-a-good-girl"
+      style="
+        opacity: 1;
+        transition: opacity 0.5s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        font-size: 7vw;
+        font-family: Comic Sans MS;
+        background-color: #000000bb;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <p>click to begin</p>
+    </div>
+    <canvas id="rowan" style="display: block; z-index: -1" />
+    <script>
+      const intro = document.getElementById("rowan-is-a-good-girl");
+      const rowan = document.getElementById("rowan");
+      const ctx = rowan.getContext("2d");
+      const roroimg = new Image();
+      let sussybaka = false;
+      roroimg.src = "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+      roroimg.onload = () => {
+        rowan.width = window.innerWidth;
+        rowan.height = window.innerHeight;
+        ctx.drawImage(roroimg, 0, 0, rowan.width, rowan.height);
+      };
+
+      let lastrowan = null;
+      function randomize() {
+        let toBeRowan =
+          "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+        if (lastrowan) {
+          while (true) {
+            if (toBeRowan == lastrowan) {
+              toBeRowan =
+                "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+            } else {
+              break;
+            }
+          }
+        }
+        roroimg.src = toBeRowan;
+        lastrowan = toBeRowan;
+      }
+      document.addEventListener("click", async () => {
+        if (sussybaka) {
+          randomize();
+          return;
+        }
+        sussybaka = true;
+        const audio_ctx = new AudioContext();
+        const analyzer = audio_ctx.createAnalyser();
+        analyzer.fftSize = 32;
+        const source = audio_ctx.createBufferSource();
+        const response = await fetch("rowan_theme_song.mp3");
+        const arrayBuffer = await response.arrayBuffer();
+        const decodedBuffer = await audio_ctx.decodeAudioData(arrayBuffer);
+
+        source.buffer = decodedBuffer;
+        source.loop = true;
+        source.connect(analyzer);
+        analyzer.connect(audio_ctx.destination);
+        source.start();
+
+        const data = new Uint8Array(analyzer.frequencyBinCount);
+
+        function draw() {
+          requestAnimationFrame(draw);
+          ctx.clearRect(0, 0, rowan.width, rowan.height);
+          analyzer.getByteFrequencyData(data);
+          sliceWidth = rowan.width / 7;
+          for (let i = 0; i < 7; i++) {
+            mult = data[i * 2] / 255 / 1.25;
+            ctx.drawImage(
+              roroimg,
+              i * (roroimg.naturalWidth / 7),
+              roroimg.naturalHeight - roroimg.naturalHeight * mult,
+              roroimg.naturalWidth / 7,
+              roroimg.naturalHeight * mult,
+              i * sliceWidth,
+              rowan.height - rowan.height * mult,
+              sliceWidth,
+              rowan.height * mult,
+            );
+          }
+        }
+        intro.classList.add("away-with-you");
+        draw();
+      });
+    </script>
+  </body>
+</html>
