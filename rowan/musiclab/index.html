@@ -13,6 +13,48 @@
       .away-with-you {
         opacity: 0 !important;
       }
+
+      #controls {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2vw;
+        box-sizing: border-box;
+        background: #000000aa;
+        font-family: Comic Sans MS;
+        font-size: 2.5vh;
+        color: white;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      #controls:hover,
+      #controls.peek {
+        opacity: 1;
+      }
+
+      #controls button {
+        background: none;
+        border: 0.3vh solid white;
+        color: white;
+        font-family: Comic Sans MS;
+        font-size: 2.5vh;
+        cursor: pointer;
+        padding: 0.5vh 2vw;
+        border-radius: 1vh;
+      }
+
+      #controls input[type="range"] {
+        width: 15vw;
+        height: 0.8vh;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -37,6 +79,11 @@
       "
     >
       <p id="i-support-transgender-individuals">click to begin</p>
+    </div>
+    <div id="controls" style="display: none">
+      <button id="pause">pause</button>
+      <span>vol</span>
+      <input id="vol-slider" type="range" min="0" max="100" value="100" />
     </div>
     <canvas
       id="rowan"
@@ -76,7 +123,31 @@
         roroimg.src = toBeRowan;
         lastrowan = toBeRowan;
       }
-      document.addEventListener("click", async () => {
+      const pause = document.getElementById("pause");
+      const volSlider = document.getElementById("vol-slider");
+      const controls = document.getElementById("controls");
+      let audio_ctx = null;
+
+      pause.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (!audio_ctx) return;
+        if (audio_ctx.state === "running") {
+          audio_ctx.suspend();
+          pause.textContent = "play";
+        } else {
+          audio_ctx.resume();
+          pause.textContent = "pause";
+        }
+      });
+
+      volSlider.addEventListener("input", (e) => {
+        e.stopPropagation();
+        if (gainNode) gainNode.gain.value = e.target.value / 100;
+      });
+
+      let gainNode = null;
+
+      intro.addEventListener("click", async () => {
         if (sussybaka) {
           if (intro.classList.contains("away-with-you")) {
             randomize();
@@ -85,9 +156,11 @@
         }
         sussybaka = true;
         introtext.innerHTML = "starting...";
-        const audio_ctx = new AudioContext();
+        audio_ctx = new AudioContext();
         const analyzer = audio_ctx.createAnalyser();
         analyzer.fftSize = 32;
+        gainNode = audio_ctx.createGain();
+        gainNode.gain.value = volSlider.value / 100;
         const source = audio_ctx.createBufferSource();
         const response = await fetch("rowan_theme_song.mp3");
         const arrayBuffer = await response.arrayBuffer();
@@ -96,14 +169,20 @@
         source.buffer = decodedBuffer;
         source.loop = true;
         source.connect(analyzer);
-        analyzer.connect(audio_ctx.destination);
+        analyzer.connect(gainNode);
+        gainNode.connect(audio_ctx.destination);
         source.start();
+        controls.style.display = "flex";
+        controls.classList.add("peek");
+        setTimeout(() => controls.classList.remove("peek"), 1000);
 
         const data = new Uint8Array(analyzer.frequencyBinCount);
 
         function draw() {
           requestAnimationFrame(draw);
           ctx.clearRect(0, 0, rowan.width, rowan.height);
+          rowan.width = window.innerWidth;
+          rowan.height = window.innerHeight * 0.95;
           analyzer.getByteFrequencyData(data);
           sliceWidth = rowan.width / 7;
           for (let i = 0; i < 7; i++) {
