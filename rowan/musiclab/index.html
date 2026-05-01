@@ -160,6 +160,7 @@
         introtext.innerHTML = "starting...";
         audio_ctx = new AudioContext();
         const analyzer = audio_ctx.createAnalyser();
+        analyzer.smoothingTimeConstant = 0.9;
         analyzer.fftSize = 32;
         gainNode = audio_ctx.createGain();
         gainNode.gain.value = volSlider.value / 100;
@@ -179,6 +180,7 @@
         setTimeout(() => controls.classList.remove("peek"), 1000);
 
         const data = new Uint8Array(analyzer.frequencyBinCount);
+        const displayed = new Float32Array(analyzer.frequencyBinCount);
 
         function draw() {
           requestAnimationFrame(draw);
@@ -186,14 +188,26 @@
           rowan.width = window.innerWidth;
           rowan.height = window.innerHeight * 0.95;
           analyzer.getByteFrequencyData(data);
-          sliceWidth = rowan.width / 7;
-          for (let i = 0; i < 7; i++) {
-            mult = data[i * 2] / 255 / 1.1;
+          for (let i = 0; i < displayed.length; i++) {
+            if (data[i] > displayed[i]) {
+              displayed[i] = data[i];
+            } else {
+              displayed[i] = Math.max(0, displayed[i] - 3);
+            }
+          }
+
+          sliceWidth = rowan.width / 14;
+          for (let i = 0; i < 14; i++) {
+            if (i > 6) {
+              mult = displayed[(13 - i) * 2] / 255;
+            } else {
+              mult = displayed[i * 2] / 255;
+            }
             ctx.drawImage(
               roroimg,
-              i * (roroimg.naturalWidth / 7),
+              i * (roroimg.naturalWidth / 14),
               roroimg.naturalHeight - roroimg.naturalHeight * mult,
-              roroimg.naturalWidth / 7,
+              roroimg.naturalWidth / 14,
               roroimg.naturalHeight * mult,
               i * sliceWidth,
               rowan.height - rowan.height * mult,
