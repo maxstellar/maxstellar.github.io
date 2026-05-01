@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Rowan - Music Lab</title>
-    <link rel="icon" type="image/x-icon" href="transgender_flag.png" />
+    <link rel="icon" type="image/x-icon" href="../transgender_flag.png" />
     <style>
       html,
       body {
@@ -33,18 +33,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        user-select: none;
       "
     >
-      <p>click to begin</p>
+      <p id="i-support-transgender-individuals">click to begin</p>
     </div>
     <canvas id="rowan" style="display: block; z-index: -1" />
     <script>
       const intro = document.getElementById("rowan-is-a-good-girl");
+      const introtext = document.getElementById(
+        "i-support-transgender-individuals",
+      );
       const rowan = document.getElementById("rowan");
       const ctx = rowan.getContext("2d");
       const roroimg = new Image();
       let sussybaka = false;
-      roroimg.src = "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+      roroimg.src =
+        "../pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
       roroimg.onload = () => {
         rowan.width = window.innerWidth;
         rowan.height = window.innerHeight;
@@ -54,12 +59,12 @@
       let lastrowan = null;
       function randomize() {
         let toBeRowan =
-          "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+          "../pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
         if (lastrowan) {
           while (true) {
             if (toBeRowan == lastrowan) {
               toBeRowan =
-                "pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
+                "../pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
             } else {
               break;
             }
@@ -70,10 +75,13 @@
       }
       document.addEventListener("click", async () => {
         if (sussybaka) {
-          randomize();
+          if (intro.classList.contains("away-with-you")) {
+            randomize();
+          }
           return;
         }
         sussybaka = true;
+        introtext.innerHTML = "starting...";
         const audio_ctx = new AudioContext();
         const analyzer = audio_ctx.createAnalyser();
         analyzer.fftSize = 32;
