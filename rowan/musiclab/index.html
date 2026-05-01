@@ -132,9 +132,11 @@
         e.stopPropagation();
         if (!audio_ctx) return;
         if (audio_ctx.state === "running") {
+          controls.classList.add("peek");
           audio_ctx.suspend();
           pause.textContent = "play";
         } else {
+          controls.classList.remove("peek");
           audio_ctx.resume();
           pause.textContent = "pause";
         }
