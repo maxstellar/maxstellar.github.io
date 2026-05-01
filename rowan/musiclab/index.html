@@ -102,7 +102,7 @@
         "../pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
       roroimg.onload = () => {
         rowan.width = window.innerWidth;
-        rowan.height = window.innerHeight * 0.95;
+        rowan.height = window.innerHeight;
         ctx.drawImage(roroimg, 0, 0, rowan.width, rowan.height);
       };
 
@@ -186,7 +186,7 @@
           requestAnimationFrame(draw);
           ctx.clearRect(0, 0, rowan.width, rowan.height);
           rowan.width = window.innerWidth;
-          rowan.height = window.innerHeight * 0.95;
+          rowan.height = window.innerHeight;
           analyzer.getByteFrequencyData(data);
           for (let i = 0; i < displayed.length; i++) {
             if (data[i] > displayed[i]) {
@@ -199,9 +199,9 @@
           sliceWidth = rowan.width / 14;
           for (let i = 0; i < 14; i++) {
             if (i > 6) {
-              mult = displayed[(13 - i) * 2] / 255;
+              mult = displayed[(13 - i) * 2] / 255 / 1.1;
             } else {
-              mult = displayed[i * 2] / 255;
+              mult = displayed[i * 2] / 255 / 1.1;
             }
             ctx.drawImage(
               roroimg,
