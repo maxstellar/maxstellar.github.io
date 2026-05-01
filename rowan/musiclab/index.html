@@ -38,7 +38,10 @@
     >
       <p id="i-support-transgender-individuals">click to begin</p>
     </div>
-    <canvas id="rowan" style="display: block; z-index: -1" />
+    <canvas
+      id="rowan"
+      style="display: block; z-index: -1; position: absolute; bottom: 0"
+    />
     <script>
       const intro = document.getElementById("rowan-is-a-good-girl");
       const introtext = document.getElementById(
@@ -52,7 +55,7 @@
         "../pics/" + Math.floor(Math.random() * 6).toString() + ".jpg";
       roroimg.onload = () => {
         rowan.width = window.innerWidth;
-        rowan.height = window.innerHeight;
+        rowan.height = window.innerHeight * 0.95;
         ctx.drawImage(roroimg, 0, 0, rowan.width, rowan.height);
       };
 
@@ -104,7 +107,7 @@
           analyzer.getByteFrequencyData(data);
           sliceWidth = rowan.width / 7;
           for (let i = 0; i < 7; i++) {
-            mult = data[i * 2] / 255 / 1.25;
+            mult = data[i * 2] / 255 / 1.1;
             ctx.drawImage(
               roroimg,
               i * (roroimg.naturalWidth / 7),
